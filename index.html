@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#275317">
+  <meta name="description" content="보배마을 중등부 교사용 소그룹 나눔 가이드 모음">
+  <title>보배마을 소그룹 가이드 모음</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Gowun+Dodum&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green: #275317;
+      --green-dark: #14350e;
+      --green-soft: #eaf5de;
+      --cream: #fffaf0;
+      --gold: #f2c94c;
+      --ink: #24311f;
+      --muted: #52624d;
+      --line: rgba(39, 83, 23, .18);
+      --surface: rgba(255, 255, 255, .92);
+      --radius: 22px;
+      --shadow: 0 14px 32px rgba(20, 53, 14, .11);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-width: 320px;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 4% 0%, rgba(242, 201, 76, .22), transparent 28rem),
+        linear-gradient(180deg, #f8fff0 0%, #fffdf5 45%, #eef7e5 100%);
+      font-family: "Gowun Dodum", system-ui, sans-serif;
+      line-height: 1.65;
+      word-break: keep-all;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button, input { font: inherit; }
+    .wrap { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
+    .skip-link {
+      position: fixed;
+      left: 14px;
+      top: -60px;
+      z-index: 10;
+      padding: 9px 13px;
+      border: 2px solid var(--green);
+      border-radius: 12px;
+      background: #fff;
+      color: var(--green-dark);
+    }
+    .skip-link:focus { top: 14px; }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 26px 0 52px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--green) 0%, #356b23 50%, #193f10 100%);
+      border-radius: 0 0 34px 34px;
+      box-shadow: 0 14px 34px rgba(20, 53, 14, .2);
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: .48;
+      background-image: linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
+      background-size: 24px 24px;
+      pointer-events: none;
+    }
+    .hero .wrap { position: relative; }
+    .topbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; }
+    .brand img { width: auto; height: 48px; border-radius: 12px; padding: 4px; }
+    .year { color: #fff8d8; font-size: .92rem; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) 250px; gap: 36px; align-items: end; margin-top: 38px; }
+    .eyebrow { margin: 0 0 8px; color: var(--gold); font-weight: 700; }
+    h1, h2, h3 { font-family: "Gowun Batang", serif; }
+    h1 { max-width: 720px; margin: 0; font-size: clamp(2.35rem, 6vw, 4.7rem); line-height: 1.1; letter-spacing: -.04em; }
+    .intro { max-width: 620px; margin: 16px 0 0; font-size: clamp(1rem, 2vw, 1.17rem); color: rgba(255,255,255,.94); }
+    .hero-note { padding: 20px; border: 1px solid rgba(255,255,255,.25); border-radius: 26px; background: rgba(255,255,255,.13); text-align: center; }
+    .hero-note img { height: 76px; width: auto; filter: drop-shadow(0 7px 10px rgba(20,53,14,.22)); }
+    .hero-note strong { display: block; margin-top: 5px; color: #fff8d8; font-family: "Gowun Batang", serif; font-size: 1.18rem; }
+    .hero-note p { margin: 4px 0 0; font-size: .91rem; color: #eef7e5; }
+
+    main { padding: 40px 0 70px; }
+    .tools { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 16px; margin-bottom: 24px; }
+    .tools h2 { margin: 0; color: var(--green-dark); font-size: clamp(1.65rem, 3vw, 2.2rem); }
+    .tools p { margin: 5px 0 0; color: var(--muted); }
+    .search { position: relative; width: min(100%, 310px); }
+    .search input { width: 100%; padding: 12px 14px 12px 42px; border: 1px solid var(--line); border-radius: 14px; outline: none; color: var(--ink); background: rgba(255,255,255,.86); }
+    .search input:focus { border-color: var(--green); box-shadow: 0 0 0 3px rgba(39,83,23,.14); }
+    .search span { position: absolute; left: 14px; top: 10px; color: var(--green); font-size: 1.1rem; }
+
+    .featured { display: grid; grid-template-columns: 1.08fr .92fr; overflow: hidden; margin-bottom: 38px; border: 1px solid var(--line); border-radius: 28px; background: var(--surface); box-shadow: var(--shadow); }
+    .featured-copy { padding: clamp(24px, 4vw, 38px); }
+    .date { display: inline-flex; padding: 5px 10px; border-radius: 999px; color: var(--green-dark); background: var(--green-soft); font-size: .85rem; font-weight: 700; }
+    .featured h3 { margin: 13px 0 8px; color: var(--green-dark); font-size: clamp(1.65rem, 3vw, 2.45rem); line-height: 1.25; }
+    .featured p { max-width: 48ch; margin: 0; color: var(--muted); }
+    .open-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 22px; padding: 11px 16px; border-radius: 13px; color: #fff; background: var(--green); font-weight: 700; transition: transform .18s ease, background .18s ease; }
+    .open-link:hover, .open-link:focus-visible { background: var(--green-dark); transform: translateY(-1px); outline: none; }
+    .open-link:active { transform: translateY(1px); }
+    .featured-art { display: grid; place-items: center; min-height: 255px; padding: 28px; background: linear-gradient(145deg, #e6f1d9, #fff7d7); }
+    .featured-art img { width: min(210px, 65%); height: auto; filter: drop-shadow(0 14px 18px rgba(39,83,23,.18)); }
+
+    .month { margin: 42px 0 14px; color: var(--green-dark); font-size: 1.4rem; }
+    .guide-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+    .guide-card { display: flex; min-height: 226px; flex-direction: column; padding: 20px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); box-shadow: 0 8px 22px rgba(20,53,14,.07); transition: transform .18s ease, box-shadow .18s ease; }
+    .guide-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+    .guide-card h3 { margin: 14px 0 8px; color: var(--green-dark); font-size: 1.34rem; line-height: 1.38; }
+    .guide-card p { margin: 0; color: var(--muted); font-size: .93rem; }
+    .card-link { margin-top: auto; padding-top: 16px; color: var(--green); font-weight: 700; font-size: .94rem; }
+    .card-link::after { content: " →"; }
+    .empty { display: none; margin: 38px 0; padding: 25px; border: 1px dashed var(--line); border-radius: var(--radius); color: var(--muted); text-align: center; background: rgba(255,255,255,.6); }
+
+    footer { padding: 26px 0 42px; border-top: 1px solid var(--line); color: var(--muted); text-align: center; font-size: .92rem; }
+    footer img { height: 38px; width: auto; margin-top: 11px; opacity: .9; }
+
+    @media (max-width: 800px) {
+      .hero { padding-bottom: 36px; }
+      .hero-grid, .featured { grid-template-columns: 1fr; }
+      .hero-note { display: none; }
+      .featured-art { min-height: 175px; order: -1; }
+      .featured-art img { width: 120px; }
+      .guide-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 560px) {
+      .wrap { width: min(100% - 24px, 1120px); }
+      .brand span { display: none; }
+      .topbar { align-items: flex-start; }
+      .year { margin-top: 10px; }
+      main { padding-top: 30px; }
+      .tools { align-items: stretch; }
+      .search { width: 100%; }
+      .guide-grid { grid-template-columns: 1fr; }
+      .guide-card { min-height: 190px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .guide-card, .open-link { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#guides">가이드 목록으로 바로가기</a>
+
+  <header class="hero">
+    <div class="wrap">
+      <div class="topbar">
+        <div class="brand">
+          <img src="https://emojipack.netlify.app/emoji/logo_church_white.png" alt="시대용사 보배마을" onerror="this.style.display='none'">
+          <span>보배마을 중등부</span>
+        </div>
+        <span class="year">교사용 자료 아카이브</span>
+      </div>
+      <div class="hero-grid">
+        <div>
+          <p class="eyebrow">매주 함께 준비하는 시간</p>
+          <h1>소그룹 나눔 가이드</h1>
+          <p class="intro">예배 후 학생들과 말씀을 더 깊이 나누기 위한 교사용 가이드를 한곳에 모았습니다.</p>
+        </div>
+        <div class="hero-note" aria-hidden="true">
+          <img src="https://emojipack.netlify.app/emoji/emoji28_teaching.png" alt="">
+          <strong>함께 듣고, 함께 나누기</strong>
+          <p>필요한 주차의 가이드를 열어 주세요.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="guides" class="wrap">
+    <section aria-labelledby="archive-title">
+      <div class="tools">
+        <div>
+          <h2 id="archive-title">가이드 모음</h2>
+          <p>제목이나 주제를 검색해 바로 찾아볼 수 있습니다.</p>
+        </div>
+        <label class="search">
+          <span aria-hidden="true">⌕</span>
+          <input id="guide-search" type="search" placeholder="가이드 검색" autocomplete="off">
+        </label>
+      </div>
+
+      <article class="featured searchable" data-search="260823 모든 것을 듣겠습니다 사도행전 10장 고넬료 설교 후 소그룹 나눔 교사용">
+        <div class="featured-copy">
+          <span class="date">2026.08.23 · 최신 가이드</span>
+          <h3>모든 것을 듣겠습니다</h3>
+          <p>사도행전 10장 고넬료 설교 후, 학생들이 부모의 신앙을 넘어 자신의 신앙을 돌아보도록 돕는 소그룹 나눔 가이드입니다.</p>
+          <a class="open-link" href="260823_groupguide.html">가이드 열기 <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="featured-art" aria-hidden="true">
+          <img src="https://emojipack.netlify.app/emoji/emoji32_prayerful.png" alt="">
+        </div>
+      </article>
+
+      <div class="month-group" data-month="2026년 8월">
+        <h3 class="month">2026년 8월</h3>
+        <div class="guide-grid">
+          <article class="guide-card searchable" data-search="260816 8월 16일 설교 소그룹 나눔 교사용"><span class="date">08.16</span><h3>8월 16일 소그룹 활동 가이드</h3><p>설교 중 두 번의 소그룹 나눔을 위한 교사용 가이드</p><a class="card-link" href="260816_groupguide.html">가이드 열기</a></article>
+          <article class="guide-card searchable" data-search="260809 불안의 제단에서 내려오기 사도행전 17장 워크북"><span class="date">08.09</span><h3>불안의 제단에서 내려오기</h3><p>사도행전 17장 설교와 학생용 워크북을 위한 활동 가이드</p><a class="card-link" href="260809_groupguide.html">가이드 열기</a></article>
+        </div>
+      </div>
+
+      <div class="month-group" data-month="2026년 7월">
+        <h3 class="month">2026년 7월</h3>
+        <div class="guide-grid">
+          <article class="guide-card searchable" data-search="260712 누구를 바라보고 있나요 교사가 먼저 읽는 말씀"><span class="date">07.12</span><h3>누구를 바라보고 있나요?</h3><p>보배마을 교사가 먼저 읽는 말씀</p><a class="card-link" href="260712_groupguide.html">가이드 열기</a></article>
+          <article class="guide-card searchable" data-search="260705 7월 5일 교육자료 설교 후 소그룹 공과 교사용"><span class="date">07.05</span><h3>7월 5일 교육자료</h3><p>설교 후 소그룹 공과를 위한 교사용 사전 학습자료</p><a class="card-link" href="260705_groupguide.html">가이드 열기</a></article>
+        </div>
+      </div>
+
+      <div class="month-group" data-month="2026년 6월">
+        <h3 class="month">2026년 6월</h3>
+        <div class="guide-grid">
+          <article class="guide-card searchable" data-search="260621 다시 소망을 기다리며 교사교육 자료"><span class="date">06.21</span><h3>다시, 소망을 기다리며</h3><p>6월 21일 예배 교사교육 자료</p><a class="card-link" href="260621_groupguide.html">가이드 열기</a></article>
+          <article class="guide-card searchable" data-search="260614 다시 욕심을 멈추고 교사 교육 자료"><span class="date">06.14</span><h3>다시, 욕심을 멈추고</h3><p>교사 교육 자료</p><a class="card-link" href="260614_groupguide.html">가이드 열기</a></article>
+          <article class="guide-card searchable" data-search="260607 다시 하나님의 것으로 교사 교육 자료"><span class="date">06.07</span><h3>다시, 하나님의 것으로</h3><p>교사 교육 자료</p><a class="card-link" href="260607_groupguide.html">가이드 열기</a></article>
+        </div>
+      </div>
+
+      <div class="month-group" data-month="2026년 5월">
+        <h3 class="month">2026년 5월</h3>
+        <div class="guide-grid">
+          <article class="guide-card searchable" data-search="260531 나는 사랑받는 존재야 교사 교육 자료"><span class="date">05.31</span><h3>나는 사랑받는 존재야</h3><p>교사 교육 자료</p><a class="card-link" href="260531_groupguide.html">가이드 열기</a></article>
+          <article class="guide-card searchable" data-search="260524 진로와 소명 설교 소그룹 가이드 교사자료"><span class="date">05.24</span><h3>진로와 소명 설교 소그룹 가이드</h3><p>교사용 소그룹 나눔 자료</p><a class="card-link" href="260524_groupguide.html">가이드 열기</a></article>
+          <article class="guide-card searchable" data-search="260517 교사 교육 심화 자료 안락교회 중등부"><span class="date">05.17</span><h3>교사 교육 심화 자료</h3><p>안락교회 중등부 교사용 자료</p><a class="card-link" href="260517_groupguide.html">가이드 열기</a></article>
+        </div>
+      </div>
+
+      <div class="month-group" data-month="2026년 4월">
+        <h3 class="month">2026년 4월</h3>
+        <div class="guide-grid">
+          <article class="guide-card searchable" data-search="260419 그날 당신은 준비됐나요 보배마을 중등부 교사 가이드"><span class="date">04.19</span><h3>그날, 당신은 준비됐나요?</h3><p>보배마을 중등부 교사 가이드</p><a class="card-link" href="260419_groupguide.html">가이드 열기</a></article>
+          <article class="guide-card searchable" data-search="260412 소그룹 나눔 교사 가이드"><span class="date">04.12</span><h3>소그룹 나눔 교사 가이드</h3><p>교사용 소그룹 나눔 자료</p><a class="card-link" href="260412_groupguide.html">가이드 열기</a></article>
+        </div>
+      </div>
+
+      <p id="empty" class="empty" role="status">검색 결과가 없습니다. 다른 단어로 다시 찾아보세요.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">보배마을 중등부 · 교사용 소그룹 나눔 가이드<br><img src="https://emojipack.netlify.app/emoji/logo_church_blue.png" alt="안락교회" onerror="this.style.display='none'"></div>
+  </footer>
+
+  <script>
+    const search = document.querySelector('#guide-search');
+    const cards = [...document.querySelectorAll('.searchable')];
+    const groups = [...document.querySelectorAll('.month-group')];
+    const featured = document.querySelector('.featured');
+    const empty = document.querySelector('#empty');
+
+    search.addEventListener('input', () => {
+      const term = search.value.trim().toLowerCase();
+      let visibleCount = 0;
+
+      cards.forEach((card) => {
+        const matched = card.dataset.search.toLowerCase().includes(term);
+        card.hidden = !matched;
+        if (matched) visibleCount += 1;
+      });
+
+      featured.hidden = term.length > 0 && !featured.dataset.search.toLowerCase().includes(term);
+      groups.forEach((group) => {
+        group.hidden = [...group.querySelectorAll('.searchable')].every((card) => card.hidden);
+      });
+      empty.style.display = visibleCount === 0 ? 'block' : 'none';
+    });
+  </script>
+</body>
+</html>

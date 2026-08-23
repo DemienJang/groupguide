@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#275317">
+  <title>보배마을 소그룹 나눔 가이드 · 모든 것을 듣겠습니다</title>
+  <meta name="description" content="사도행전 10장 고넬료 설교 후 소그룹 나눔을 위한 보배마을 교사용 가이드">
+  <meta property="og:title" content="모든 것을 듣겠습니다 · 교사용 소그룹 나눔 가이드">
+  <meta property="og:description" content="고넬료의 신앙을 통해 학생들이 부모의 신앙을 넘어 자신의 신앙을 돌아보도록 돕는 소그룹 가이드">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Gowun+Dodum&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --green:#275317;
+      --green-2:#14350e;
+      --green-3:#3f7429;
+      --mint:#eaf5de;
+      --cream:#fffaf0;
+      --gold:#f2c94c;
+      --coral:#ff7b64;
+      --ink:#24311f;
+      --muted:#52624d;
+      --soft:#f4f8ee;
+      --blue-soft:#f1f5fb;
+      --yellow-soft:#fff8d8;
+      --line:rgba(39,83,23,.18);
+      --shadow:0 18px 40px rgba(20,53,14,.15);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at top left,rgba(242,201,76,.22),transparent 34rem),
+        linear-gradient(180deg,#f8fff0 0%,#fffdf5 40%,#eef7e5 100%);
+      font-family:'Gowun Dodum',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+      line-height:1.72;
+      word-break:keep-all;
+      padding-bottom:92px;
+    }
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
+    .wrap{width:min(1000px,92vw);margin:0 auto}
+    .skip-link{position:fixed;left:12px;top:-80px;z-index:100;background:#fff;color:var(--green-2);padding:10px 14px;border-radius:12px;border:2px solid var(--green)}
+    .skip-link:focus{top:12px}
+
+    header.hero{
+      position:relative;
+      overflow:hidden;
+      color:white;
+      background:linear-gradient(135deg,var(--green) 0%,#356b23 48%,#193f10 100%);
+      border-bottom-left-radius:34px;
+      border-bottom-right-radius:34px;
+      box-shadow:var(--shadow);
+      padding:28px 0 40px;
+    }
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);
+      background-size:22px 22px;
+      opacity:.55;
+    }
+    .hero .wrap{position:relative;z-index:2}
+    .topbar{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:22px}
+    .brand img{height:48px;width:auto;border-radius:12px;padding:4px}
+    .pill img{height:63px;width:auto;display:block}
+    .hero-grid{display:grid;grid-template-columns:1.5fr .72fr;gap:28px;align-items:center}
+    .eyebrow{color:var(--gold);font-weight:700;letter-spacing:.03em;margin:0 0 8px}
+    h1{font-family:'Gowun Batang',serif;font-size:clamp(2.15rem,6vw,4.5rem);line-height:1.08;margin:0 0 12px;font-weight:700}
+    .subtitle{font-size:clamp(1.03rem,2.5vw,1.3rem);opacity:.95;margin:0 0 18px}
+    .identity{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:22px;padding:16px 18px;max-width:720px}
+    .identity strong{color:var(--gold)}
+    .hero-card{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.25);border-radius:28px;padding:20px;display:flex;flex-direction:column;align-items:center;text-align:center}
+    .hero-card .quote{font-family:'Gowun Batang',serif;font-size:1.55rem;line-height:1.45;color:#fff8d8;margin:4px 0 10px;font-weight:700}
+    .hero-card p{margin:8px 0 0;font-size:.96rem;color:#fff8d8}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px}
+    .action-btn{border:1px solid rgba(255,255,255,.32);background:rgba(255,255,255,.13);color:#fff;border-radius:999px;padding:8px 13px;cursor:pointer;transition:.18s ease}
+    .action-btn:hover,.action-btn:focus-visible{background:#fff;color:var(--green-2);outline:none}
+    .action-btn[aria-pressed="true"]{background:#fff;color:var(--green-2);box-shadow:0 0 0 2px rgba(242,201,76,.75)}
+
+    main{padding:28px 0 30px}
+    section{scroll-margin-top:18px;margin:27px 0}
+    .section-head{display:flex;align-items:center;gap:12px;margin:0 0 14px}
+    .badge-num{width:40px;height:40px;border-radius:14px;background:var(--green);color:white;display:grid;place-items:center;font-weight:700;box-shadow:0 8px 18px rgba(39,83,23,.2);flex:0 0 auto}
+    h2{font-family:'Gowun Batang',serif;font-size:clamp(1.55rem,4vw,2.15rem);margin:0;color:var(--green-2)}
+    h3{color:var(--green-2)}
+    .section-deco{height:42px;width:auto;margin-left:auto;opacity:.92;filter:drop-shadow(0 4px 8px rgba(39,83,23,.15))}
+    .card{background:rgba(255,255,255,.9);border:1px solid var(--line);border-radius:26px;padding:22px;box-shadow:0 10px 28px rgba(20,53,14,.08)}
+    .relative{position:relative;overflow:hidden}
+    .keyline{font-size:1.2rem;line-height:1.55;font-weight:700;color:var(--green-2);margin:0}
+    .keyline mark{background:linear-gradient(180deg,transparent 48%,rgba(242,201,76,.55) 48%);color:inherit;padding:0 .1em}
+    .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+    .tag{padding:7px 11px;border-radius:999px;background:#edf6e7;border:1px solid var(--line);font-size:.92rem;color:#315b20}
+    .goal{border-left:5px solid var(--gold);background:var(--yellow-soft);border-radius:18px;padding:16px 18px;margin-top:16px}
+    .goal b{color:var(--green-2)}
+    .scripture{background:#f9fbf5;border:1px solid var(--line);border-radius:18px;padding:15px 17px;margin-top:14px;color:#3f5038}
+    .scripture b{color:var(--green-2)}
+    .emoji-corner{position:absolute;right:18px;bottom:-5px;width:84px;opacity:.93;filter:drop-shadow(0 10px 14px rgba(39,83,23,.18));pointer-events:none}
+
+    .grid{display:grid;gap:16px}
+    .two{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .three{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .point{display:flex;gap:12px;align-items:flex-start;background:white;border:1px solid var(--line);border-radius:20px;padding:16px}
+    .point .icon img{height:40px;width:auto;display:block}
+    .point h3{margin:0 0 6px;font-size:1.1rem}
+    .point p{margin:0;color:var(--muted)}
+
+    .timeline{display:grid;gap:12px}
+    .time-row{display:grid;grid-template-columns:86px 48px 1fr;gap:12px;align-items:center;background:var(--soft);border:1px solid var(--line);border-radius:20px;padding:13px 14px}
+    .time{font-family:'Gowun Batang',serif;font-weight:700;color:var(--green);text-align:center;background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 8px}
+    .time-icon{display:grid;place-items:center}
+    .time-icon img{height:38px;width:auto;filter:drop-shadow(0 4px 8px rgba(39,83,23,.13))}
+    .time-row b{display:block;color:var(--green-2);font-size:1.05rem}
+    .time-row p{margin:1px 0 0;color:var(--muted);font-size:.95rem}
+
+    .principle{position:relative;padding-right:78px}
+    .principle strong{display:block;color:var(--green-2);margin-bottom:4px}
+    .principle .mini-warrior{position:absolute;right:14px;bottom:8px;height:58px;width:auto;opacity:.86}
+
+    .activity-stack{display:grid;gap:18px}
+    .activity-card{background:rgba(255,255,255,.93);border:1px solid var(--line);border-radius:26px;box-shadow:0 10px 28px rgba(20,53,14,.08);overflow:hidden}
+    .activity-head{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;padding:17px 19px;background:linear-gradient(135deg,#edf6e7,#fffdf5);border-bottom:1px solid var(--line)}
+    .activity-no{width:46px;height:46px;border-radius:16px;background:var(--green);color:#fff;display:grid;place-items:center;font-family:'Gowun Batang',serif;font-weight:700;font-size:1.18rem}
+    .activity-head h3{margin:0;font-family:'Gowun Batang',serif;font-size:1.4rem;line-height:1.25}
+    .activity-head p{margin:3px 0 0;color:var(--muted);font-size:.94rem}
+    .activity-head img{height:56px;width:auto;filter:drop-shadow(0 7px 10px rgba(39,83,23,.16))}
+    .activity-body{padding:19px}
+    .activity-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .mini-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:15px}
+    .mini-card h4{margin:0 0 7px;color:var(--green-2);font-size:1.03rem}
+    .mini-card p{margin:0;color:var(--muted)}
+    .mini-card ul{margin:6px 0 0;padding-left:1.25em;color:var(--muted)}
+    .mini-card li{margin:.25rem 0}
+    .wide{grid-column:1 / -1}
+    .question-box{grid-column:1 / -1;background:#fff;border:1px solid var(--line);border-radius:18px;padding:16px 18px}
+    .question-box .q-label{display:inline-block;background:var(--green);color:#fff;border-radius:999px;padding:4px 10px;font-size:.88rem;margin-bottom:10px}
+    .question-box h4{margin:0 0 8px;color:var(--green-2);font-size:1.12rem}
+    .question-box p{margin:0;color:#3e4e39}
+    .subq{margin-top:10px;padding:12px 14px;border-left:5px solid var(--gold);border-radius:14px;background:var(--yellow-soft);color:var(--green-2);font-weight:700}
+    .teacher-script{background:var(--yellow-soft);border-left:5px solid var(--gold);border-radius:18px;padding:15px 17px;color:#3d4d38}
+    .teacher-script::before{content:attr(data-label);display:block;font-weight:700;color:var(--green-2);margin-bottom:6px}
+    .example{background:var(--blue-soft);border:1px solid rgba(63,92,138,.16);border-radius:18px;padding:14px 16px;color:#465466}
+    .example::before{content:"학생 답변 예시";display:block;font-weight:700;color:#2e4f72;margin-bottom:5px}
+    .coach-tip{background:#edf6e7;border:1px dashed rgba(39,83,23,.35);border-radius:18px;padding:14px 16px;color:#3f5d37}
+    .coach-tip::before{content:"교사 포인트";display:block;font-weight:700;color:var(--green-2);margin-bottom:5px}
+    .choice-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin-top:8px}
+    .choice{background:var(--soft);border:1px solid var(--line);border-radius:13px;padding:8px 10px;color:#4b5d46;font-size:.94rem}
+    .choice::before{content:"□";color:var(--green);font-weight:700;margin-right:7px}
+
+    details{background:white;border:1px solid var(--line);border-radius:20px;padding:0;overflow:hidden}
+    summary{cursor:pointer;list-style:none;padding:16px 18px;font-weight:700;color:var(--green-2);display:flex;justify-content:space-between;align-items:center;gap:12px}
+    summary::-webkit-details-marker{display:none}
+    summary::after{content:"＋";color:var(--coral);font-size:1.2rem;font-weight:700}
+    details[open] summary::after{content:"－"}
+    .detail-body{padding:0 18px 18px;color:#4c5e48}
+    .dialogue{display:grid;gap:9px}
+    .speech{border-radius:18px;padding:13px 15px;border:1px solid var(--line)}
+    .student{background:#f5f7fb}
+    .teacher{background:#fff7df}
+    .speech b{display:inline-block;margin-right:6px;color:var(--green)}
+
+    .closing{font-family:'Gowun Batang',serif;font-size:1.08rem;background:linear-gradient(135deg,#fff9e4,#ffffff);border:1px solid rgba(242,201,76,.45);border-radius:24px;padding:22px;color:#354232}
+    .closing strong{color:var(--green-2)}
+    .prayer{margin-top:14px;background:#edf6e7;border:1px dashed rgba(39,83,23,.35);border-radius:20px;padding:17px;color:#3f5d37}
+
+    .bottom-nav{position:fixed;left:50%;bottom:14px;transform:translateX(-50%);width:min(800px,94vw);background:rgba(255,255,255,.92);backdrop-filter:blur(14px);border:1px solid var(--line);box-shadow:0 16px 34px rgba(20,53,14,.18);border-radius:999px;padding:8px;z-index:50;display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
+    .bottom-nav a{display:flex;align-items:center;justify-content:center;gap:5px;text-align:center;padding:10px 4px;border-radius:999px;font-size:.86rem;color:#36542c;white-space:nowrap}
+    .bottom-nav a img{height:22px;width:auto}
+    .bottom-nav a:hover,.bottom-nav a:focus-visible{background:#edf6e7;color:var(--green-2);outline:none}
+    footer{padding:22px 0 40px;text-align:center;color:#55704b;font-size:.92rem}
+    footer img{height:44px;opacity:.9;margin-top:12px}
+
+    @media (max-width:760px){
+      .hero-grid,.two,.three,.activity-grid{grid-template-columns:1fr}
+      .hero-card{display:none}
+      .card{padding:18px}
+      .activity-head{grid-template-columns:auto 1fr}
+      .activity-head > img{display:none}
+      .wide{grid-column:auto}
+      .choice-list{grid-template-columns:1fr}
+      .time-row{grid-template-columns:72px 1fr}
+      .time-icon{display:none}
+      .bottom-nav a{font-size:.77rem;padding:9px 2px;gap:3px}
+      .principle{padding-right:68px}
+      .principle .mini-warrior{height:48px}
+    }
+
+    @media print{
+      @page{size:A4;margin:12mm 10mm}
+      html{scroll-behavior:auto}
+      body{background:#fff!important;color:#1f2b1b!important;padding-bottom:0!important;font-size:10.3pt;line-height:1.52;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+      .wrap{width:100%;max-width:none;margin:0 auto}
+      .bottom-nav,.hero-actions,.skip-link{display:none!important}
+      header.hero{padding:10px 0 12px!important;border-radius:0 0 16px 16px!important;box-shadow:none!important;background:linear-gradient(135deg,#275317 0%,#356b23 52%,#193f10 100%)!important}
+      .hero::before,.hero-card{display:none!important}
+      .topbar{margin-bottom:5px!important}
+      .brand img{height:30px!important}
+      .pill img{height:39px!important}
+      .hero-grid{grid-template-columns:1fr!important;gap:6px!important}
+      .eyebrow{margin-bottom:2px!important;font-size:8.5pt!important}
+      h1{font-size:22pt!important;margin-bottom:5px!important;line-height:1.08!important}
+      .subtitle{font-size:10.5pt!important;margin-bottom:7px!important}
+      .identity{padding:7px 10px!important;border-radius:12px!important;font-size:9.2pt!important}
+      main{padding:8px 0 0!important}
+      section{margin:9px 0!important;scroll-margin-top:0!important}
+      .section-head{margin-bottom:7px!important;gap:7px!important}
+      .badge-num{width:28px!important;height:28px!important;border-radius:9px!important;font-size:10pt!important;box-shadow:none!important}
+      h2{font-size:16pt!important}
+      .section-deco{height:27px!important}
+      .card,.activity-card,.point,.time-row,details,.speech{box-shadow:none!important}
+      .card{padding:11px!important;border-radius:14px!important;background:#fff!important}
+      .keyline{font-size:11pt!important;line-height:1.4!important}
+      .meta{gap:4px!important;margin-top:6px!important}
+      .tag{padding:3px 7px!important;font-size:8.4pt!important}
+      .goal,.scripture{padding:8px 10px!important;margin-top:6px!important;border-radius:12px!important}
+      .grid{gap:7px!important}
+      .point,.time-row,.mini-card,.teacher-script,.example,.coach-tip,.activity-card,details,.closing,.prayer{break-inside:avoid-page;page-break-inside:avoid}
+      .point{padding:9px!important;border-radius:12px!important}
+      .point .icon img{height:27px!important}
+      .point h3{font-size:10.5pt!important;margin-bottom:2px!important}
+      .point p{font-size:9.2pt!important;line-height:1.45!important}
+      .timeline{gap:6px!important}
+      .time-row{display:flex!important;align-items:center!important;gap:8px!important;width:100%!important;padding:8px!important;border-radius:12px!important;background:#fff!important}
+      .time{flex:0 0 68px!important;padding:3px 5px!important;font-size:8.8pt!important}
+      .time-icon{display:grid!important;flex:0 0 28px!important}
+      .time-icon img{height:25px!important}
+      .time-row > div:last-child{flex:1 1 auto!important;min-width:0!important;width:auto!important}
+      .time-row b{font-size:9.8pt!important}
+      .time-row p{font-size:8.9pt!important;line-height:1.4!important}
+      .principle{padding-right:58px!important}
+      .principle .mini-warrior{height:42px!important}
+      .activity-stack{gap:8px!important}
+      .activity-card{border-radius:14px!important;background:#fff!important}
+      .activity-head{grid-template-columns:32px 1fr 38px!important;gap:8px!important;padding:9px 10px!important}
+      .activity-no{width:30px!important;height:30px!important;border-radius:9px!important;font-size:9.5pt!important}
+      .activity-head h3{font-size:12pt!important}
+      .activity-head p{font-size:8.6pt!important;line-height:1.35!important}
+      .activity-head img{display:block!important;height:35px!important}
+      .activity-body{padding:10px!important}
+      .activity-grid{grid-template-columns:1fr 1fr!important;gap:7px!important}
+      .mini-card,.question-box{padding:8px!important;border-radius:11px!important}
+      .mini-card h4,.question-box h4{font-size:9.8pt!important;margin-bottom:3px!important}
+      .mini-card p,.mini-card li,.question-box p{font-size:8.9pt!important;line-height:1.42!important}
+      .subq{padding:6px 8px!important;margin-top:5px!important;border-radius:9px!important;font-size:8.7pt!important}
+      .teacher-script,.example,.coach-tip{padding:8px 10px!important;border-radius:11px!important;font-size:9pt!important;line-height:1.45!important}
+      .choice-list{grid-template-columns:1fr 1fr!important;gap:4px!important}
+      .choice{padding:4px 7px!important;border-radius:8px!important;font-size:8.5pt!important}
+      summary{padding:9px 11px!important;font-size:9.5pt!important}
+      summary::after{display:none!important}
+      details:not([open]) .detail-body{display:block!important}
+      .detail-body{padding:0 11px 10px!important;font-size:9pt!important}
+      .dialogue{gap:5px!important}
+      .speech{padding:7px 9px!important;border-radius:10px!important;font-size:8.8pt!important}
+      .closing{padding:12px!important;border-radius:14px!important;font-size:9.8pt!important;line-height:1.55!important}
+      .prayer{padding:10px!important;margin-top:7px!important;border-radius:12px!important;font-size:9.2pt!important}
+      .emoji-corner{display:none!important}
+      footer{padding:9px 0 0!important;font-size:8.5pt!important;break-inside:avoid}
+      footer img{height:28px!important;margin-top:3px!important}
+      a{text-decoration:none!important;color:inherit!important}
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">본문으로 바로가기</a>
+
+  <header class="hero" id="top">
+    <div class="wrap">
+      <div class="topbar">
+        <div class="brand"><img src="https://emojipack.netlify.app/emoji/logo_church_white.png" alt="시대용사 보배마을" onerror="this.style.display='none'"></div>
+        <span class="pill"><img src="https://emojipack.netlify.app/emoji/logo_youth1.png" alt="" onerror="this.style.display='none'"></span>
+      </div>
+      <div class="hero-grid">
+        <div>
+          <p class="eyebrow">보배마을 교사용 소그룹 나눔 가이드</p>
+          <h1>모든 것을 듣겠습니다</h1>
+          <p class="subtitle">고넬료의 신앙 → 나의 신앙 → 하나님께 듣고 싶은 것</p>
+          <div class="identity">사도행전 10장 고넬료 설교 후 진행하는 소그룹 나눔입니다. 학생들이 고넬료의 모습을 다시 떠올리고, 부모님의 신앙을 따라가는 단계에서 <strong>내가 하나님을 알고 싶어 하는 신앙</strong>으로 자라가고 있는지 돌아보도록 돕는 것이 목적입니다.</div>
+          <div class="hero-actions" aria-label="문서 도구">
+            <button class="action-btn font-size-btn" type="button" data-font-scale="0.9">작게</button>
+            <button class="action-btn font-size-btn" type="button" data-font-scale="1" aria-pressed="true">보통</button>
+            <button class="action-btn font-size-btn" type="button" data-font-scale="1.12">크게</button>
+            <button class="action-btn" type="button" onclick="window.print()">인쇄하기</button>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="quote">“하나님 앞에<br>있습니다.”</div>
+          <p>모든 것을 듣고자 했던<br>고넬료의 자리로 초대하기</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap" id="main">
+    <section id="overview">
+      <div class="section-head"><span class="badge-num">1</span><h2>설교 한 눈에 보기</h2><img class="section-deco" src="https://emojipack.netlify.app/emoji/emoji26_focused.png" alt="" onerror="this.style.display='none'"></div>
+      <div class="card relative">
+        <p class="keyline">고넬료는 로마의 백부장으로 사람들에게 명령하는 위치에 있었지만, 하나님 앞에서는 <mark>말씀을 듣는 사람</mark>이 되었습니다. 하나님은 자신을 찾던 고넬료에게 예수 그리스도의 복음을 들려주시고, 말씀을 듣는 모든 사람에게 성령을 부으셨습니다.</p>
+        <div class="goal"><b>본문 · 사도행전 10장 33–44절 중심</b><br>“이제 우리는 주께서 당신에게 명하신 모든 것을 듣고자 하여 다 하나님 앞에 있나이다”라는 고넬료의 고백에서, “성령이 말씀 듣는 모든 사람에게 내려오시니”라는 사건의 절정까지 이어지는 흐름을 붙잡습니다.</div>
+        <div class="goal"><b>설교 핵심</b><br>하나님을 찾고 말씀을 듣고자 했던 고넬료에게 예수 그리스도의 복음이 주어지고, 그 복음이 그의 집과 주변 사람들에게까지 확장됨.</div>
+        <div class="goal"><b>소그룹 목표</b><br>학생들이 고넬료의 모습을 통해 자신의 신앙 상태를 돌아보고, 개학 이후의 삶 속에서 하나님께 듣고 싶은 질문을 말로 표현하도록 돕습니다.</div>
+        <div class="meta">
+          <span class="tag">필수 질문 3개</span>
+          <span class="tag">선택 질문 1개</span>
+          <span class="tag">생활 적용은 소그룹에서</span>
+          <span class="tag">부모 신앙 → 나의 신앙</span>
+        </div>
+        <img class="emoji-corner" src="https://emojipack.netlify.app/emoji/emoji32_prayerful.png" alt="" onerror="this.style.display='none'">
+      </div>
+    </section>
+
+    <section id="sermon-flow">
+      <div class="section-head"><span class="badge-num">2</span><h2>설교 핵심 흐름</h2><img class="section-deco" src="https://emojipack.netlify.app/emoji/emoji28_teaching.png" alt="" onerror="this.style.display='none'"></div>
+      <div class="card">
+        <div class="timeline">
+          <div class="time-row"><span class="time">장면 1</span><span class="time-icon"><img src="https://emojipack.netlify.app/emoji/emoji34_contemplative.png" alt=""></span><div><b>고넬료는 하나님을 찾고 있었다</b><p>로마 권력의 중심지 가이사랴에 살던 백부장 고넬료는 온 집안과 함께 하나님을 경외하고, 기도하고, 구제하던 사람이었습니다.</p></div></div>
+          <div class="time-row"><span class="time">장면 2</span><span class="time-icon"><img src="https://emojipack.netlify.app/emoji/emoji21_hopeful.png" alt=""></span><div><b>하나님은 이미 고넬료를 보고 계셨다</b><p>하나님은 고넬료의 기도와 구제를 기억하셨고, 천사를 통해 베드로를 청하라고 말씀하셨습니다.</p></div></div>
+          <div class="time-row"><span class="time">장면 3</span><span class="time-icon"><img src="https://emojipack.netlify.app/emoji/emoji27_welcoming.png" alt=""></span><div><b>고넬료는 혼자 듣지 않았다</b><p>베드로가 도착하기 전, 고넬료는 가족과 친척과 가까운 친구들을 함께 불러 말씀을 기다렸습니다.</p></div></div>
+          <div class="time-row"><span class="time">장면 4</span><span class="time-icon"><img src="https://emojipack.netlify.app/emoji/emoji47_serious.png" alt=""></span><div><b>명령하던 고넬료는 듣는 사람이 되었다</b><p>고넬료는 “모든 것을 듣고자 하여 다 하나님 앞에 있나이다”라고 고백했습니다.</p></div></div>
+          <div class="time-row"><span class="time">복음</span><span class="time-icon"><img src="https://emojipack.netlify.app/emoji/emoji29_worshipful.png" alt=""></span><div><b>가장 큰 응답은 예수 그리스도의 복음이었다</b><p>베드로는 더 많은 선행이나 경건의 방법이 아니라, 예수님의 십자가와 부활과 죄 사함의 복음을 전했습니다.</p></div></div>
+          <div class="time-row"><span class="time">결론</span><span class="time-icon"><img src="https://emojipack.netlify.app/emoji/emoji16_excited.png" alt=""></span><div><b>말씀 듣는 모든 사람에게 성령이 임했다</b><p>하나님은 고넬료와 함께 말씀을 듣던 사람들에게 성령을 부으셨고, 복음은 한 사람과 한 집을 넘어 더 많은 사람에게 흘러갔습니다.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="background">
+      <div class="section-head"><span class="badge-num">3</span><h2>본문과 학생 이해</h2><img class="section-deco" src="https://emojipack.netlify.app/emoji/emoji16_excited.png" alt="" onerror="this.style.display='none'"></div>
+      <div class="grid three">
+        <div class="point"><div class="icon"><img src="https://emojipack.netlify.app/emoji/emoji47_serious.png" alt=""></div><div><h3>1. 고넬료를 영웅화하지 않기</h3><p>고넬료는 훌륭한 경건의 모범이지만, 설교의 중심은 고넬료의 위대함이 아니라 하나님이 고넬료를 예수 그리스도의 복음 앞으로 이끄신 일입니다.</p></div></div>
+        <div class="point"><div class="icon"><img src="https://emojipack.netlify.app/emoji/emoji28_teaching.png" alt=""></div><div><h3>2. 부모의 신앙을 부정하지 않기</h3><p>부모님을 따라 교회에 온 신앙을 가짜라고 말하지 않습니다. 그 신앙이 이제 내가 하나님을 알고 싶어 하는 신앙으로 자라가도록 돕는 것이 핵심입니다.</p></div></div>
+        <div class="point"><div class="icon"><img src="https://emojipack.netlify.app/emoji/emoji21_hopeful.png" alt=""></div><div><h3>3. 개학 상황과 연결하기</h3><p>개학 후 학생들은 친구 관계, 공부, 학원, 부모님과의 갈등, 새 학기 적응을 경험합니다. 소그룹에서는 이 문제들을 “하나님께 듣고 싶은 것”으로 표현하도록 돕습니다.</p></div></div>
+      </div>
+    </section>
+
+    <section id="principles">
+      <div class="section-head"><span class="badge-num">4</span><h2>교사가 먼저 붙잡을 원칙</h2><img class="section-deco" src="https://emojipack.netlify.app/emoji/emoji49_defensive.png" alt="" onerror="this.style.display='none'"></div>
+      <div class="grid two">
+        <div class="point principle"><div><strong>정답을 빨리 주지 않기</strong><p>학생이 “잘 모르겠어요”라고 해도 괜찮습니다. 고넬료의 이야기처럼 하나님 앞에 서는 질문을 만드는 것이 먼저입니다.</p></div><img class="mini-warrior" src="https://emojipack.netlify.app/emoji/emoji30_peaceful.png" alt=""></div>
+        <div class="point principle"><div><strong>가정 신앙을 평가하지 않기</strong><p>“부모님 따라온 신앙”을 낮게 보지 않습니다. 하나님이 그 시작을 사용하셔서 학생 자신의 신앙으로 자라게 하실 수 있음을 기억합니다.</p></div><img class="mini-warrior" src="https://emojipack.netlify.app/emoji/emoji20_encouraging.png" alt=""></div>
+        <div class="point principle"><div><strong>말할 수 있는 만큼만 말하게 하기</strong><p>질문이 깊기 때문에 억지로 간증처럼 말하게 하지 않습니다. 선택지, 예시, 짧은 문장으로 답할 수 있게 돕습니다.</p></div><img class="mini-warrior" src="https://emojipack.netlify.app/emoji/emoji35_thoughtful.png" alt=""></div>
+        <div class="point principle"><div><strong>복음 질문은 선택으로 두기</strong><p>예수님의 복음이 가장 큰 응답인지 묻는 질문은 깊습니다. 시간이 있거나 분위기가 무르익었을 때 선택 질문으로 다룹니다.</p></div><img class="mini-warrior" src="https://emojipack.netlify.app/emoji/emoji29_worshipful.png" alt=""></div>
+      </div>
+    </section>
+
+    <section id="activities">
+      <div class="section-head"><span class="badge-num">5</span><h2>소그룹 나눔 진행 가이드</h2><img class="section-deco" src="https://emojipack.netlify.app/emoji/emoji25_resolute.png" alt="" onerror="this.style.display='none'"></div>
+      <div class="activity-stack">
+        <article class="activity-card" id="activity-1">
+          <div class="activity-head"><span class="activity-no">01</span><div><h3>고넬료의 신앙</h3><p>오늘 설교 속 고넬료의 모습을 다시 떠올리는 질문</p></div><img src="https://emojipack.netlify.app/emoji/emoji34_contemplative.png" alt=""></div>
+          <div class="activity-body"><div class="activity-grid">
+            <div class="question-box">
+              <span class="q-label">필수 질문 1</span>
+              <h4>오늘 설교를 통해 알게 된 고넬료의 모습 중에 가장 인상 깊었던 모습은 무엇인가요?</h4>
+              <div class="subq">그 모습이 인상 깊었던 이유는 무엇인가요?</div>
+            </div>
+            <div class="mini-card"><h4>질문 의도</h4><p>학생들이 설교를 단순히 “좋은 이야기”로 넘기지 않고, 고넬료라는 인물 안에서 자신에게 남은 장면을 말하도록 돕습니다.</p></div>
+            <div class="example">“고넬료가 가족과 친구들을 미리 불러놓은 게 인상 깊었어요. 아직 무슨 말씀을 들을지 모르는데 같이 듣고 싶어 한 것 같아서요.”</div>
+            <div class="teacher-script wide" data-label="진행 멘트">오늘 설교에서 고넬료는 여러 모습으로 나왔습니다. 하나님을 경외하는 사람, 기도하는 사람, 구제하는 사람, 가족과 친구들을 불러 모은 사람, 하나님 앞에서 모든 것을 듣겠다고 한 사람. 그중에 가장 기억에 남는 모습 하나를 골라서 이유와 함께 이야기해 봅시다.</div>
+            <div class="coach-tip wide">학생이 성경 내용을 잘 기억하지 못하면 먼저 몇 가지 장면을 다시 불러 주세요. “명령하던 백부장이 듣는 사람이 된 장면”, “혼자 듣지 않고 사람들을 모은 장면”, “하나님이 기도와 구제를 기억하신 장면” 정도면 충분합니다.</div>
+          </div></div>
+        </article>
+
+        <article class="activity-card" id="activity-2">
+          <div class="activity-head"><span class="activity-no">02</span><div><h3>나의 신앙</h3><p>부모의 신앙에서 자신의 신앙으로 자라가는 길을 돌아보는 질문</p></div><img src="https://emojipack.netlify.app/emoji/emoji35_thoughtful.png" alt=""></div>
+          <div class="activity-body"><div class="activity-grid">
+            <div class="question-box">
+              <span class="q-label">필수 질문 2</span>
+              <h4>지금 내 신앙은 ‘우리 집이 믿어서 따라가는 신앙’에 가까운가요, ‘내가 하나님을 알고 싶어서 따라가는 신앙’에 가까운가요?</h4>
+              <div class="subq">나의 어떤 모습을 보면 그런 생각이 드나요?</div>
+            </div>
+            <div class="mini-card"><h4>선택지로 열어 주기</h4>
+              <div class="choice-list">
+                <div class="choice">아직 부모님을 따라가는 느낌</div>
+                <div class="choice">반반인 것 같음</div>
+                <div class="choice">조금씩 내 신앙이 생기는 중</div>
+                <div class="choice">잘 모르겠음</div>
+              </div>
+            </div>
+            <div class="example">“저는 반반 같아요. 교회는 부모님 때문에 오는 게 크지만, 가끔 말씀 들을 때 하나님이 진짜 계신지 알고 싶다는 생각도 들어요.”</div>
+            <div class="teacher-script wide" data-label="진행 멘트">이 질문은 누가 믿음이 좋고 나쁜지 평가하는 질문이 아닙니다. 부모님 때문에 교회에 오기 시작한 것도 하나님이 사용하실 수 있습니다. 다만 이제 내 마음 안에 ‘내가 하나님을 알고 싶다’는 마음이 자라고 있는지 함께 돌아보자는 질문입니다.</div>
+            <div class="coach-tip wide">“부모님 따라 교회 오는 건 가짜 신앙”이라는 분위기가 되지 않게 해 주세요. “그 시작도 소중하다. 그런데 하나님은 그 신앙이 너의 신앙으로 자라기를 원하신다”는 방향으로 정리합니다.</div>
+          </div></div>
+        </article>
+
+        <article class="activity-card" id="activity-3">
+          <div class="activity-head"><span class="activity-no">03</span><div><h3>하나님께 듣고 싶은 것</h3><p>개학 이후의 실제 삶을 하나님 앞에 가져가는 질문</p></div><img src="https://emojipack.netlify.app/emoji/emoji32_prayerful.png" alt=""></div>
+          <div class="activity-body"><div class="activity-grid">
+            <div class="question-box">
+              <span class="q-label">필수 질문 3</span>
+              <h4>고넬료는 하나님 앞에 서서 모든 것을 듣겠다고 하였습니다. 내가 하나님 앞에 선다면 나는 무엇에 대해서 말씀해 주시길 원하나요?</h4>
+            </div>
+            <div class="mini-card"><h4>생각을 여는 예시</h4>
+              <ul>
+                <li>개학 후 친구 관계</li>
+                <li>공부와 성적</li>
+                <li>부모님과의 갈등</li>
+                <li>교회에 계속 다니는 이유</li>
+                <li>내가 어떤 사람이 되어야 하는지</li>
+                <li>요즘 마음에 있는 걱정</li>
+              </ul>
+            </div>
+            <div class="example">“저는 친구 관계에 대해서 하나님이 말씀해 주셨으면 좋겠어요. 새 학기 들어서 어색한 친구가 있는데 어떻게 해야 할지 잘 모르겠어요.”</div>
+            <div class="teacher-script wide" data-label="진행 멘트">고넬료는 하나님 앞에서 ‘모든 것을 듣겠습니다’라고 했습니다. 우리도 하나님 앞에 선다면 어떤 문제에 대해 말씀을 듣고 싶은지 생각해 봅시다. 꼭 거창한 신앙 질문이 아니어도 괜찮습니다. 지금 내 마음에 실제로 있는 질문이면 됩니다.</div>
+            <div class="coach-tip wide">이 질문은 조언을 바로 주는 시간이 아닙니다. 학생이 말한 주제를 하나님 앞에 가져가도록 돕는 것이 목적입니다. 필요하면 “그 문제를 위해 이번 주에 함께 기도해 보자” 정도로 마무리합니다.</div>
+          </div></div>
+        </article>
+
+        <article class="activity-card" id="activity-4">
+          <div class="activity-head"><span class="activity-no">＋</span><div><h3>선택 질문 · 예수님의 복음</h3><p>시간과 분위기가 허락될 때 다루는 깊은 질문</p></div><img src="https://emojipack.netlify.app/emoji/emoji29_worshipful.png" alt=""></div>
+          <div class="activity-body"><div class="activity-grid">
+            <div class="question-box">
+              <span class="q-label">선택 질문</span>
+              <h4>고넬료에게 하나님이 주신 가장 큰 응답은 문제가 해결되는 것이 아니라 예수님의 복음을 듣게 하신 것입니다. 예수님의 복음은 나에게도 가장 큰 응답이 되나요?</h4>
+            </div>
+            <div class="mini-card"><h4>질문 의도</h4><p>학생들이 하나님을 단지 문제 해결자로만 생각하지 않고, 예수님의 십자가와 부활과 죄 사함의 복음이 왜 가장 큰 응답인지 생각하게 합니다.</p></div>
+            <div class="example">“솔직히 아직은 성적이나 친구 문제가 해결되는 게 더 크게 느껴져요. 그런데 오늘 설교를 들으니까 하나님이 나에게 예수님을 알게 하신 것도 중요한 응답일 수 있겠다는 생각이 들어요.”</div>
+            <div class="teacher-script wide" data-label="진행 멘트">이 질문은 조금 깊을 수 있습니다. 정답을 말하려고 하지 않아도 괜찮습니다. 지금 나에게 가장 큰 응답은 무엇처럼 느껴지는지, 그리고 예수님의 복음이 왜 가장 큰 응답이라고 말할 수 있는지 천천히 나눠 봅시다.</div>
+            <div class="coach-tip wide">학생이 “아직 잘 모르겠다”고 답해도 좋은 답입니다. 그때는 “그럴 수 있어. 그래서 우리가 계속 말씀을 듣고 예수님을 알아가는 거야”라고 받아 주면 좋습니다.</div>
+          </div></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="responses">
+      <div class="section-head"><span class="badge-num">6</span><h2>이럴 때 이렇게</h2><img class="section-deco" src="https://emojipack.netlify.app/emoji/emoji36_confused.png" alt="" onerror="this.style.display='none'"></div>
+      <div class="grid two">
+        <details open><summary>“저는 그냥 부모님 때문에 와요.”</summary><div class="detail-body"><div class="dialogue"><div class="speech student"><b>학생</b>저는 그냥 부모님이 가라고 해서 교회 오는 거예요.</div><div class="speech teacher"><b>교사</b>그렇게 시작할 수 있어. 그런데 오늘 고넬료처럼 하나님을 조금 더 알고 싶다는 마음이 생긴 적은 있었어?</div></div><p><strong>포인트:</strong> 부모님 때문에 온 것을 문제로 몰지 않습니다. 그 시작 안에서도 자신의 질문이 생길 수 있도록 돕습니다.</p></div></details>
+        <details open><summary>“하나님께 듣고 싶은 게 없어요.”</summary><div class="detail-body"><p>바로 신앙 질문을 요구하지 말고 “요즘 가장 많이 생각하는 문제는 뭐야?”, “개학하고 제일 신경 쓰이는 건 뭐야?”처럼 일상 질문으로 낮춰 주세요. 그 문제를 하나님 앞에 가져가면 됩니다.</p></div></details>
+        <details open><summary>“복음이 왜 가장 큰 응답인지 모르겠어요.”</summary><div class="detail-body"><div class="dialogue"><div class="speech teacher"><b>교사</b>그렇게 느낄 수 있어. 당장 힘든 문제가 있으면 그 문제가 해결되는 게 더 커 보이기도 해. 오늘 설교는 하나님이 고넬료에게 가장 먼저 예수님을 들려주셨다는 걸 보여줬어. 우리도 그 의미를 계속 배워 가는 중이야.</div></div></div></details>
+        <details open><summary>“저는 믿음이 없는 것 같아요.”</summary><div class="detail-body"><p>“그렇게 말할 수 있다는 것 자체가 하나님 앞에서 솔직해지는 시작일 수 있어”라고 받아 주세요. 믿음의 크기를 평가하지 말고, 하나님을 알고 싶은 작은 마음이 있는지 묻는 방향으로 이끌면 좋습니다.</p></div></details>
+        <details open><summary>한 학생이 깊은 고민을 말할 때</summary><div class="detail-body"><p>소그룹 안에서 모든 해결을 시도하지 않습니다. 공감하고, 함께 기도하겠다고 말하고, 필요하면 예배 후 개인적으로 더 듣겠다고 안내합니다.</p></div></details>
+        <details open><summary>대화가 너무 빨리 끝날 때</summary><div class="detail-body"><p>각 질문마다 “왜 그렇게 생각했어?”, “요즘 어떤 모습에서 그렇게 느꼈어?”, “하나님이 뭐라고 말씀해 주시면 좋겠어?”라는 보조 질문을 사용합니다. 단, 취조처럼 이어가지 않도록 한두 번만 묻습니다.</p></div></details>
+      </div>
+    </section>
+
+    <section id="teacher-meditation">
+      <div class="section-head"><span class="badge-num">7</span><h2>교사를 위한 묵상</h2><img class="section-deco" src="https://emojipack.netlify.app/emoji/emoji32_prayerful.png" alt="" onerror="this.style.display='none'"></div>
+      <div class="card relative">
+        <div class="closing"><strong>학생에게 묻기 전에, 교사인 나도 하나님 앞에 섭니다.</strong><br><br>
+          나는 하나님께 어떤 말씀을 듣고 싶어 하나요?<br>
+          내가 원하는 답만 듣고 싶어 하는 마음은 없나요?<br>
+          학생들의 신앙이 아직 부모님을 따라가는 단계처럼 보여도, 하나님이 그 안에서 일하고 계심을 믿고 있나요?<br><br>
+          고넬료는 하나님 앞에서 모든 것을 듣겠다고 했습니다. 교사인 우리도 먼저 그 자리에 서야 합니다. 학생을 고치기 전에, 함께 말씀을 듣는 사람으로 서는 것이 오늘 소그룹의 시작입니다.</div>
+        <div class="prayer"><strong>교사 기도</strong><br>하나님, 학생들에게 신앙을 묻기 전에 제가 먼저 하나님 앞에서 듣는 사람이 되게 해 주세요. 제가 원하는 답만 붙들지 않고, 주님이 말씀하시는 모든 것을 들을 수 있는 마음을 주세요. 학생들의 솔직한 고백을 판단하지 않게 하시고, 부모님의 신앙을 따라오던 아이들이 하나님을 알고 싶어 하는 자신의 신앙으로 자라가도록 지혜롭게 돕게 해 주세요. 예수 그리스도의 복음이 우리 소그룹 가운데 가장 큰 응답으로 들려지게 해 주세요. 아멘.</div>
+        <img class="emoji-corner" src="https://emojipack.netlify.app/emoji/emoji32_prayerful.png" alt="" onerror="this.style.display='none'">
+      </div>
+    </section>
+  </main>
+
+  <nav class="bottom-nav" aria-label="빠른 이동">
+    <a href="#overview"><img src="https://emojipack.netlify.app/emoji/emoji26_focused.png" alt="">한눈에</a>
+    <a href="#sermon-flow"><img src="https://emojipack.netlify.app/emoji/emoji28_teaching.png" alt="">설교</a>
+    <a href="#activities"><img src="https://emojipack.netlify.app/emoji/emoji25_resolute.png" alt="">나눔</a>
+    <a href="#responses"><img src="https://emojipack.netlify.app/emoji/emoji36_confused.png" alt="">대응</a>
+    <a href="#teacher-meditation"><img src="https://emojipack.netlify.app/emoji/emoji32_prayerful.png" alt="">묵상</a>
+  </nav>
+
+  <footer><div class="wrap">보배마을 중등부 · 교사용 소그룹 나눔 가이드<br><strong>모든 것을 듣겠습니다</strong> · 사도행전 10장<br><img src="https://emojipack.netlify.app/emoji/logo_church_blue.png" alt="안락교회" onerror="this.style.display='none'"></div></footer>
+
+  <script>
+    const fontSizeButtons = [...document.querySelectorAll('.font-size-btn')];
+    fontSizeButtons.forEach(button => button.addEventListener('click', () => {
+      document.documentElement.style.fontSize = `${Number(button.dataset.fontScale) * 100}%`;
+      fontSizeButtons.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+    }));
+  </script>
+</body>
+</html>

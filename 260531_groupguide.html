@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>교사 교육 자료 | 나는 사랑받는 존재야</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FAF7F2;
+    --warm-white: #FFFDF9;
+    --brown-dark: #2C1A0E;
+    --brown-mid: #6B3F1F;
+    --brown-light: #C4956A;
+    --gold: #D4A853;
+    --gold-light: #F0D49A;
+    --sage: #7A9E7E;
+    --sage-light: #C8DFC9;
+    --rust: #C45C3A;
+    --rust-light: #F2D5C8;
+    --sky: #4A7FA5;
+    --sky-light: #C8DDED;
+    --text-main: #1E1208;
+    --text-sub: #5C3D20;
+    --text-light: #8C6845;
+    --border: #E8D8C4;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: var(--cream);
+    color: var(--text-main);
+    line-height: 1.8;
+  }
+
+  /* HEADER */
+  .hero {
+    background: linear-gradient(135deg, var(--brown-dark) 0%, #4A2810 60%, var(--brown-mid) 100%);
+    padding: 60px 40px 50px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(ellipse at 30% 40%, rgba(212,168,83,0.12) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 70%, rgba(122,158,126,0.08) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(212,168,83,0.2);
+    border: 1px solid rgba(212,168,83,0.4);
+    color: var(--gold-light);
+    font-size: 19px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 6px 18px;
+    border-radius: 20px;
+    margin-bottom: 24px;
+  }
+  .hero h1 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 40px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+  .hero h1 span {
+    color: var(--gold);
+  }
+  .hero-sub {
+    color: rgba(255,255,255,0.6);
+    font-size: 18px;
+    margin-bottom: 32px;
+  }
+  .hero-meta {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .hero-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    padding: 8px 16px;
+    border-radius: 8px;
+    color: rgba(255,255,255,0.8);
+    font-size: 19px;
+  }
+  .hero-meta-item .icon {
+    font-size: 19px;
+  }
+
+  /* NAV */
+  .nav {
+    background: var(--warm-white);
+    border-bottom: 1px solid var(--border);
+    padding: 0 40px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+  }
+  .nav a {
+    display: block;
+    padding: 16px 20px;
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 19px;
+    font-weight: 500;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+  }
+  .nav a:hover {
+    color: var(--brown-mid);
+    border-bottom-color: var(--gold);
+  }
+
+  /* LAYOUT */
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 48px 32px;
+  }
+
+  /* SECTION */
+  .section {
+    margin-bottom: 64px;
+  }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+  .section-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+  .icon-gold { background: linear-gradient(135deg, var(--gold-light), var(--gold)); }
+  .icon-sage { background: linear-gradient(135deg, var(--sage-light), var(--sage)); }
+  .icon-rust { background: linear-gradient(135deg, var(--rust-light), var(--rust)); }
+  .icon-sky { background: linear-gradient(135deg, var(--sky-light), var(--sky)); }
+  .icon-brown { background: linear-gradient(135deg, #D4B896, var(--brown-light)); }
+
+  .section-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 25px;
+    font-weight: 700;
+    color: var(--brown-dark);
+  }
+  .section-desc {
+    font-size: 19px;
+    color: var(--text-light);
+    margin-top: 2px;
+  }
+
+  /* SCRIPTURE BOX */
+  .scripture-box {
+    background: linear-gradient(135deg, var(--brown-dark), #3D2210);
+    border-radius: 16px;
+    padding: 32px 36px;
+    margin-bottom: 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .scripture-box::before {
+    content: '"';
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    font-size: 120px;
+    font-family: 'Noto Serif KR', serif;
+    color: rgba(212,168,83,0.15);
+    line-height: 1;
+  }
+  .scripture-text {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 18px;
+    color: rgba(255,255,255,0.9);
+    line-height: 2;
+    position: relative;
+  }
+  .scripture-ref {
+    margin-top: 16px;
+    color: var(--gold);
+    font-size: 19px;
+    font-weight: 500;
+    position: relative;
+  }
+
+  /* INTENT BOX */
+  .intent-box {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--gold);
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin-bottom: 24px;
+  }
+  .intent-label {
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+  .intent-text {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 19px;
+    color: var(--brown-dark);
+    line-height: 1.7;
+  }
+
+  /* FLOW */
+  .flow {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .flow-item {
+    display: flex;
+    gap: 20px;
+    position: relative;
+  }
+  .flow-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 19px;
+    top: 40px;
+    bottom: -8px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--border), transparent);
+  }
+  .flow-dot {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 2px;
+    position: relative;
+    z-index: 1;
+  }
+  .flow-dot-sermon { background: var(--gold-light); color: var(--brown-mid); }
+  .flow-dot-share { background: var(--sage-light); color: #3D6640; }
+  .flow-body {
+    flex: 1;
+    padding-bottom: 28px;
+  }
+  .flow-title {
+    font-weight: 700;
+    font-size: 19px;
+    color: var(--brown-dark);
+    margin-bottom: 6px;
+  }
+  .flow-summary {
+    font-size: 19px;
+    color: var(--text-sub);
+    line-height: 1.8;
+  }
+  .flow-share-badge {
+    display: inline-block;
+    background: var(--sage-light);
+    color: #3D6640;
+    font-size: 19px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 6px;
+  }
+  .flow-keyword {
+    display: inline-block;
+    background: var(--gold-light);
+    color: var(--brown-mid);
+    font-size: 19px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 6px;
+  }
+
+  /* SHARE CARDS */
+  .share-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .share-card {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  .share-card-header {
+    padding: 20px 24px 16px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .share-num {
+    width: 36px;
+    height: 36px;
+    background: var(--sage);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 700;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  .share-card-title {
+    font-weight: 700;
+    font-size: 19px;
+    color: var(--brown-dark);
+  }
+  .share-card-subtitle {
+    font-size: 18px;
+    color: var(--text-light);
+    margin-top: 2px;
+  }
+  .share-card-body {
+    padding: 20px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .share-q-box {
+    background: linear-gradient(135deg, #EFF7F0, var(--sage-light));
+    border-radius: 12px;
+    padding: 18px 20px;
+  }
+  .share-q-label {
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #3D6640;
+    margin-bottom: 8px;
+  }
+  .share-q-text {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 18px;
+    color: var(--brown-dark);
+    font-weight: 600;
+    line-height: 1.6;
+  }
+  .share-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .share-mini-card {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .share-mini-label {
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+  .label-intent { color: var(--sky); }
+  .label-expect { color: var(--rust); }
+  .share-mini-text {
+    font-size: 19px;
+    color: var(--text-sub);
+    line-height: 1.7;
+  }
+  .share-tip-box {
+    background: #FFF8EC;
+    border: 1px solid #F0D49A;
+    border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .share-tip-label {
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+  .share-tip-text {
+    font-size: 19px;
+    color: var(--text-sub);
+    line-height: 1.7;
+  }
+  .share-alt-box {
+    background: var(--rust-light);
+    border: 1px solid #E8B8A4;
+    border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .share-alt-label {
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--rust);
+    margin-bottom: 8px;
+  }
+  .share-alt-text {
+    font-size: 19px;
+    color: var(--text-sub);
+    line-height: 1.7;
+  }
+
+  /* TIPS */
+  .tips-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .tip-card {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 20px 22px;
+  }
+  .tip-card-icon {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  .tip-card-title {
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--brown-dark);
+    margin-bottom: 8px;
+  }
+  .tip-card-text {
+    font-size: 19px;
+    color: var(--text-sub);
+    line-height: 1.8;
+  }
+
+  /* THEOLOGY */
+  .theology-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .theo-card {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  .theo-card-header {
+    padding: 16px 22px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    user-select: none;
+  }
+  .theo-badge {
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 4px 12px;
+    border-radius: 20px;
+  }
+  .badge-blue { background: var(--sky-light); color: var(--sky); }
+  .badge-green { background: var(--sage-light); color: #3D6640; }
+  .badge-gold { background: var(--gold-light); color: var(--brown-mid); }
+  .badge-rust { background: var(--rust-light); color: var(--rust); }
+
+  .theo-title {
+    font-weight: 700;
+    font-size: 19px;
+    color: var(--brown-dark);
+    flex: 1;
+  }
+  .theo-body {
+    padding: 0 22px 20px;
+    border-top: 1px solid var(--border);
+  }
+  .theo-body p {
+    font-size: 18px;
+    color: var(--text-sub);
+    line-height: 1.9;
+    margin-top: 16px;
+  }
+  .theo-body strong {
+    color: var(--brown-dark);
+  }
+  .theo-verse {
+    background: var(--cream);
+    border-left: 3px solid var(--gold);
+    padding: 12px 16px;
+    margin-top: 14px;
+    border-radius: 0 8px 8px 0;
+    font-size: 19px;
+    color: var(--text-sub);
+    font-style: italic;
+  }
+
+  /* NEW FRIEND */
+  .nf-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 4px;
+  }
+  .nf-item {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px 20px;
+    display: flex;
+    gap: 12px;
+  }
+  .nf-icon {
+    font-size: 20px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .nf-title {
+    font-weight: 700;
+    font-size: 19px;
+    color: var(--brown-dark);
+    margin-bottom: 6px;
+  }
+  .nf-text {
+    font-size: 18px;
+    color: var(--text-sub);
+    line-height: 1.7;
+  }
+
+  /* PRAYER */
+  .prayer-box {
+    background: linear-gradient(135deg, #EFF7F0, #D8EDD9);
+    border: 1px solid var(--sage-light);
+    border-radius: 16px;
+    padding: 28px 32px;
+  }
+  .prayer-text {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 19px;
+    color: #2A4A2D;
+    line-height: 2.2;
+  }
+
+  /* DIVIDER */
+  .divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--border), transparent);
+    margin: 48px 0;
+  }
+
+  /* FOOTER */
+  .footer {
+    background: var(--brown-dark);
+    padding: 32px 40px;
+    text-align: center;
+  }
+  .footer-text {
+    color: rgba(255,255,255,0.4);
+    font-size: 18px;
+    line-height: 1.8;
+  }
+  .footer-verse {
+    color: var(--gold);
+    font-family: 'Noto Serif KR', serif;
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+
+  /* HIGHLIGHT */
+  .highlight {
+    background: linear-gradient(120deg, var(--gold-light) 0%, transparent 100%);
+    padding: 2px 4px;
+    border-radius: 3px;
+  }
+
+  /* CAUTION BOX */
+  .caution-box {
+    background: #FFF3EC;
+    border: 1px solid #F0C4A8;
+    border-radius: 10px;
+    padding: 14px 18px;
+    font-size: 19px;
+    color: #7A3D1A;
+    line-height: 1.7;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  @media (max-width: 640px) {
+    .hero { padding: 40px 20px; }
+    .hero h1 { font-size: 26px; }
+    .container { padding: 32px 20px; }
+    .share-row { grid-template-columns: 1fr; }
+    .tips-grid { grid-template-columns: 1fr; }
+    .nf-grid { grid-template-columns: 1fr; }
+    .nav { padding: 0 16px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">교사 교육 자료</div>
+  <h1>나는 <span>사랑받는</span> 존재야</h1>
+  <div class="hero-sub">중등부 새친구 초청 예배 설교 | 교사 가이드</div>
+  <div class="hero-meta">
+    <div class="hero-meta-item"><span class="icon">📖</span>로마서 10:9-10</div>
+    <div class="hero-meta-item"><span class="icon">⏱</span>설교+나눔 35분</div>
+    <div class="hero-meta-item"><span class="icon">🎯</span>새친구 초청예배</div>
+    <div class="hero-meta-item"><span class="icon">✝️</span> 복음 전도+영접</div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- 1. 설교 개요 -->
+  <div class="section" id="overview">
+    <div class="section-header">
+      <div class="section-icon icon-gold">📋</div>
+      <div>
+        <div class="section-title">설교 개요</div>
+        <div class="section-desc">이번 설교의 의도, 목적, 핵심 본문</div>
+      </div>
+    </div>
+
+    <div class="scripture-box">
+      <div class="scripture-text">
+        "네가 만일 네 입으로 예수를 주로 시인하며 또 하나님께서 그를 죽은 자 가운데서 살리신 것을 네 마음에 믿으면 구원을 받으리라 사람이 마음으로 믿어 의에 이르고 입으로 시인하여 구원에 이르느니라"
+      </div>
+      <div class="scripture-ref">— 로마서 10장 9-10절</div>
+    </div>
+
+    <div class="intent-box">
+      <div class="intent-label">설교 핵심 논지</div>
+      <div class="intent-text">
+        "우리 안에는 신념이 있다. 그러나 그 신념들은 우리를 행복하게 못 한다. 우리를 만들고 사랑하신 하나님과의 관계가 끊어졌기 때문이다. 예수님이 죽기까지 사랑함으로 그 관계를 회복시켰다. <strong>'나는 사랑받는 존재야.'</strong> 이 신념, 너도 붙잡지 않을래?"
+      </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 8px;">
+      <div style="background: var(--warm-white); border: 1px solid var(--border); border-radius: 12px; padding: 20px 22px;">
+        <div style="font-size: 14px; font-weight: 700; letter-spacing: 1.5px; color: var(--rust); margin-bottom: 10px;">🎯 설교 목적</div>
+        <ul style="font-size: 17px; color: var(--text-sub); line-height: 2; padding-left: 16px;">
+          <li>복음을 쉽고 논리적으로 전달</li>
+          <li>새친구도 공감할 수 있는 언어 사용</li>
+          <li>영접기도까지 자연스럽게 연결</li>
+          <li>'나는 사랑받는 존재'라는 신념 심기</li>
+        </ul>
+      </div>
+      <div style="background: var(--warm-white); border: 1px solid var(--border); border-radius: 12px; padding: 20px 22px;">
+        <div style="font-size: 14px; font-weight: 700; letter-spacing: 1.5px; color: var(--sky); margin-bottom: 10px;">💡 설교 특징</div>
+        <ul style="font-size: 17px; color: var(--text-sub); line-height: 2; padding-left: 16px;">
+          <li>'죄' 표현 없이 복음 전달</li>
+          <li>진화론/창조론으로 흥미 유발</li>
+          <li>중학생 눈높이 예화 사용</li>
+          <li>나눔 3회 포함 (각 5분)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 2. 설교 흐름 -->
+  <div class="section" id="flow">
+    <div class="section-header">
+      <div class="section-icon icon-brown">🗺</div>
+      <div>
+        <div class="section-title">설교 흐름 요약</div>
+        <div class="section-desc">전체 구조와 각 파트 핵심 내용</div>
+      </div>
+    </div>
+
+    <div class="flow">
+
+      <div class="flow-item">
+        <div class="flow-dot flow-dot-sermon">서</div>
+        <div class="flow-body">
+          <div class="flow-keyword">서론 · 약 5분</div>
+          <div class="flow-title">신념에는 힘이 있어</div>
+          <div class="flow-summary">
+            화면에 비합리적 신념 4개를 띄우고 학생들이 공감하는지 확인한다.<br>
+            <em>("인정받고 싶어", "틀리면 안 돼", "내 미래가 불안해", "이게 무슨 의미야")</em><br>
+            → <strong>로젠탈 효과(피그말리온 효과)</strong> 소개: 선생님의 신념이 학생의 성적을 실제로 바꿨다.<br>
+            → "신념에는 힘이 있다. 오늘 가장 강력한 신념을 소개하겠다."
+          </div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-dot flow-dot-share">①</div>
+        <div class="flow-body">
+          <div class="flow-share-badge">나눔 ① · 5분</div>
+          <div class="flow-title">"내 머릿속 신념 나눔"</div>
+          <div class="flow-summary">소그룹 나눔 진행 (가이드 참고)</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-dot flow-dot-sermon">1</div>
+        <div class="flow-body">
+          <div class="flow-keyword">본론 1 · 약 6분</div>
+          <div class="flow-title">만약 하나님이 존재한다면?</div>
+          <div class="flow-summary">
+            <strong>진화론 vs 창조론:</strong> 진화론은 '우연', 창조론은 '의도'를 말한다.<br>
+            → 만약 우리를 만든 존재가 있다면? <strong>작가와 캐릭터 예화</strong>로 "만든다 = 관심과 사랑"을 설명.<br>
+            → 지금 세상(전쟁, 극심한 경쟁)은 하나님이 원하시던 세상이 아니다.<br>
+            → 우리가 우리 방식대로 살기로 선택했고, 그 선택이 하나님과의 관계를 끊었다.
+          </div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-dot flow-dot-share">②</div>
+        <div class="flow-body">
+          <div class="flow-share-badge">나눔 ② · 5분</div>
+          <div class="flow-title">"이건 아닌데 싶었던 순간"</div>
+          <div class="flow-summary">소그룹 나눔 진행 (가이드 참고)</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-dot flow-dot-sermon">2</div>
+        <div class="flow-body">
+          <div class="flow-keyword">본론 2 · 약 7분</div>
+          <div class="flow-title">예수님이 그 관계를 회복시켰어</div>
+          <div class="flow-summary">
+            우리는 성적, 좋아요, 인정으로 채우려 하지만 계속 비어있다. 끊어진 관계가 회복되지 않았기 때문.<br>
+            → <strong>예수님의 죽음:</strong> 범죄자 대신 처벌 예화 — 우리 대신 값을 치르셨다.<br>
+            → <strong>예수님의 부활:</strong> 국가유공자 공로가 자녀에게 적용되는 예화 — 예수님의 공로가 우리에게 적용된다.<br>
+            → 신념은 근거가 있어야 강하다. "나는 사랑받는 존재야"의 유일한 근거가 예수님의 사랑이다.
+          </div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-dot flow-dot-share">③</div>
+        <div class="flow-body">
+          <div class="flow-share-badge">나눔 ③ · 5분</div>
+          <div class="flow-title">"감동받은 사랑 이야기"</div>
+          <div class="flow-summary">소그룹 나눔 진행 후 브리지: "그 사랑이 실제로 일어났다 — 예수님이야."</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-dot flow-dot-sermon">결</div>
+        <div class="flow-body">
+          <div class="flow-keyword">결론 + 영접기도 · 약 7분</div>
+          <div class="flow-title">너도 이 신념 안으로</div>
+          <div class="flow-summary">
+            로마서 10:9-10 본문 낭독 → 구원 설명 ("끊어진 관계가 회복되는 것")<br>
+            → 영접기도 인도 → 영접기도 후 선언: <strong>"나는 사랑받는 존재야."</strong>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 3. 나눔 가이드 -->
+  <div class="section" id="sharing">
+    <div class="section-header">
+      <div class="section-icon icon-sage">💬</div>
+      <div>
+        <div class="section-title">나눔 인도 가이드</div>
+      </div>
+    </div>
+
+    <div class="share-cards">
+
+      <!-- 나눔 1 -->
+      <div class="share-card">
+        <div class="share-card-header">
+          <div class="share-num">①</div>
+          <div>
+            <div class="share-card-title">나눔 ① — 서론 직후</div>
+            <div class="share-card-subtitle">학생들의 마음을 여는 나눔</div>
+          </div>
+        </div>
+        <div class="share-card-body">
+          <div class="share-q-box">
+            <div class="share-q-label">나눔 질문</div>
+            <div class="share-q-text">
+              "지금 내 머릿속에 자주 들리는 목소리가 있어? 나를 행복하게 하는 신념인지, 힘들게 하는 신념인지 나눠볼래?"
+            </div>
+          </div>
+          <div class="share-row">
+            <div class="share-mini-card">
+              <div class="share-mini-label label-intent">💡 질문 의도</div>
+              <div class="share-mini-text">
+                서론에서 소개한 비합리적 신념들이 남의 이야기가 아니라 <strong>내 이야기</strong>임을 확인하게 한다. 설교에 주체적으로 참여하도록 문을 여는 첫 나눔.
+              </div>
+            </div>
+            <div class="share-mini-card">
+              <div class="share-mini-label label-expect">🗣 예상 답변</div>
+              <div class="share-mini-text">
+                · "1등 해야 한다는 말이 맨날 들려요"<br>
+                · "틀리면 안 된다는 생각이 있어요"<br>
+                · "미래가 불안한 것 같아요"<br>
+                · "모르겠어요" (무응답)
+              </div>
+            </div>
+          </div>
+          <div class="share-tip-box">
+            <div class="share-tip-label">✅ 인도 팁</div>
+            <div class="share-tip-text">
+              기존 친구들이 먼저 답하면 분위기가 만들어집니다. 교사가 먼저 한 가지 자기 이야기를 짧게 나눠주셔도 좋습니다.<br>
+              <em>예: "저는 '실패하면 안 돼'라는 말이 자주 들리더라고요."</em>
+            </div>
+          </div>
+          <div class="share-alt-box">
+            <div class="share-alt-label">🔄 답변 없을 때</div>
+            <div class="share-alt-text">
+              "그럼 화면에 있던 말 중에 가장 공감됐던 게 뭐야?" 로 좁혀서 질문해 보세요. 보기를 주면 훨씬 쉽게 답할 수 있습니다. 여전히 조용하면 "맞아, 이런 말들 머릿속에 있으면 피곤하지?" 하고 교사가 공감하며 자연스럽게 넘어가셔도 괜찮습니다.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 나눔 2 -->
+      <div class="share-card">
+        <div class="share-card-header">
+          <div class="share-num">②</div>
+          <div>
+            <div class="share-card-title">나눔 ② — 본론 1 직후</div>
+            <div class="share-card-subtitle">새친구도 참여할 수 있는 열린 나눔</div>
+          </div>
+        </div>
+        <div class="share-card-body">
+          <div class="share-q-box">
+            <div class="share-q-label">나눔 질문</div>
+            <div class="share-q-text">
+              "지금 세상에서, 또는 내 삶에서 '이건 아닌데', '뭔가 잘못됐는데' 싶었던 순간이 있어? 어떤 순간이었어?"
+            </div>
+          </div>
+          <div class="share-row">
+            <div class="share-mini-card">
+              <div class="share-mini-label label-intent">💡 질문 의도</div>
+              <div class="share-mini-text">
+                "세상이 잘못됐다"는 본론 1의 주장을 학생들 스스로의 경험으로 확인하게 한다. 신앙 없이도 답할 수 있어 <strong>새친구의 참여</strong>가 자연스럽다.
+              </div>
+            </div>
+            <div class="share-mini-card">
+              <div class="share-mini-label label-expect">🗣 예상 답변</div>
+              <div class="share-mini-text">
+                · "전쟁 뉴스 볼 때요"<br>
+                · "친구한테 욕 들었을 때"<br>
+                · "시험 망쳤는데 아무도 신경 안 쓸 때"<br>
+                · "학교가 너무 힘들 때"
+              </div>
+            </div>
+          </div>
+          <div class="share-tip-box">
+            <div class="share-tip-label">✅ 인도 팁</div>
+            <div class="share-tip-text">
+              학생들의 답변을 판단하거나 교정하지 마시고 <strong>공감하며 받아주세요.</strong> "맞아, 그때 많이 힘들었겠다." / "그런 순간이 있었구나." 답변들을 설교 내용과 자연스럽게 연결해준다.<br>
+              <em>예: "그렇지, 뭔가 아닌 것 같다는 느낌 — 그게 사실 하나님이 원하시던 세상이 아니기 때문이야."</em>
+            </div>
+          </div>
+          <div class="share-alt-box">
+            <div class="share-alt-label">🔄 답변 없을 때</div>
+            <div class="share-alt-text">
+              "요즘 뉴스에서 전쟁 본 적 있어?" / "학교에서 '이건 좀 아닌데' 싶었던 적 없어?" 처럼 범위를 좁혀 구체적으로 물어봐 주세요. 새친구라면 "오늘 처음 왔는데, 뭔가 요즘 힘든 거 있어?" 로 가볍게 마음을 열어주셔도 좋습니다.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 나눔 3 -->
+      <div class="share-card">
+        <div class="share-card-header">
+          <div class="share-num">③</div>
+          <div>
+            <div class="share-card-title">나눔 ③ — 본론 2 직후</div>
+            <div class="share-card-subtitle">영접기도 전 마음을 여는 결정적 나눔</div>
+          </div>
+        </div>
+        <div class="share-card-body">
+          <div class="share-q-box">
+            <div class="share-q-label">나눔 질문</div>
+            <div class="share-q-text">
+              "드라마, 영화, 웹툰, 소설에서 진짜 감동받은 사랑 이야기 있어? 어떤 장면이었어?"
+            </div>
+          </div>
+          <div class="share-row">
+            <div class="share-mini-card">
+              <div class="share-mini-label label-intent">💡 질문 의도</div>
+              <div class="share-mini-text">
+                누구나 안전하게 참여할 수 있는 질문으로 분위기를 따뜻하게 만든다. 나눔 후 <strong>"그 사랑이 실제로 일어났다 — 예수님"</strong>으로 자연스럽게 복음과 연결한다.
+              </div>
+            </div>
+            <div class="share-mini-card">
+              <div class="share-mini-label label-expect">🗣 예상 답변</div>
+              <div class="share-mini-text">
+                · 좋아하는 드라마/영화 장면<br>
+                · 웹툰 캐릭터 이야기<br>
+                · 부모님이나 친구에게 받은 사랑<br>
+                · "없어요" (드문 편)
+              </div>
+            </div>
+          </div>
+          <div class="share-tip-box">
+            <div class="share-tip-label">✅ 인도 팁</div>
+            <div class="share-tip-text">
+              가장 활발한 나눔이 될 가능성이 높습니다. 충분히 들어주시되 시간을 체크해 주세요. 나눔 후 브리지 멘트가 중요하다:<br>
+              <em>"방금 너희가 나눈 그 사랑들 — 감동적이지? 근데 그 사랑이 실제로 일어났어. 이야기 속이 아니라, 역사 속에서. 죽기까지 사랑한 게 — 예수님이야."</em>
+            </div>
+          </div>
+          <div class="share-alt-box">
+            <div class="share-alt-label">🔄 답변 없을 때</div>
+            <div class="share-alt-text">
+              "요즘 뭐 봐? 드라마나 웹툰 중에 사랑하는 장면 있었어?" 로 더 가볍게 물어봐 주세요. 혹은 교사가 먼저 좋아하는 장면 하나를 나누면서 물꼬를 터주셔도 좋습니다. 이 나눔은 특히 분위기가 중요하므로 교사의 표정과 리액션이 핵심입니다.
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 4. 나눔 팁 -->
+  <div class="section" id="tips">
+    <div class="section-header">
+      <div class="section-icon icon-rust">🌟</div>
+      <div>
+        <div class="section-title">소그룹 나눔 인도 팁</div>
+        <div class="section-desc">놓치기 쉬운 포인트들</div>
+      </div>
+    </div>
+
+    <div class="caution-box" style="margin-bottom: 20px;">
+      <span>⚠️</span>
+      <span>새친구가 있는 소그룹에서는 특히 <strong>억지로 답하게 하지 않는 것</strong>이 중요합니다. 침묵도 하나의 참여입니다. 듣는 것만으로도 마음이 열릴 수 있습니다.</span>
+    </div>
+
+    <div class="tips-grid">
+      <div class="tip-card">
+        <div class="tip-card-icon">🎤<span class="tip-card-title">교사가 먼저 나눠주세요</span></div>
+        <div class="tip-card-text">학생들이 어색해하면 교사가 먼저 짧고 솔직한 자기 이야기를 나눠주세요. 완벽한 신앙 고백보다 <strong>진솔한 이야기</strong>가 더 효과적입니다.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-card-icon">👂<span class="tip-card-title">들을 때 리액션을 보여주세요</span></div>
+        <div class="tip-card-text">"오, 그랬어?", "맞아, 그 느낌 알아.", "나눠줘서 고마워." 같은 짧은 반응이 다음 사람이 말할 수 있는 용기를 줍니다.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-card-icon">⏰<span class="tip-card-title">시간을 지켜주세요</span></div>
+        <div class="tip-card-text">나눔은 5분입니다. 이야기가 길어지면 자연스럽게 "오늘 얘기 더 하고 싶으면 예배 끝나고 이어서 하자!" 로 정리해 주세요.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-card-icon">🚫<span class="tip-card-title">판단하거나 교정하지 마세요</span></div>
+        <div class="tip-card-text">"그건 틀렸어", "그렇게 생각하면 안 돼" 는 절대 금물입니다. 특히 새친구의 답변은 반드시 공감하며 받아주세요.</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-card-icon">🤝<span class="tip-card-title">새친구를 바라봐주세요</span></div>
+        <div class="tip-card-text">나눔 중 새친구가 소외되지 않도록 새친구 쪽을 자주 바라보고, 이름을 불러주는 것만으로도 큰 환영이 됩니다.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 5. 신학/신앙 학습 자료 -->
+  <div class="section" id="theology">
+    <div class="section-header">
+      <div class="section-icon icon-sky">📚</div>
+      <div>
+        <div class="section-title">교사 학습 자료</div>
+        <div class="section-desc">본문과 관련된 신학적·신앙적 배경 지식</div>
+      </div>
+    </div>
+
+    <div class="theology-cards">
+
+      <div class="theo-card">
+        <div class="theo-card-header">
+          <div class="theo-badge badge-blue">본문 이해</div>
+        </div>
+        <div class="theo-body">
+          <p><div class="theo-title">로마서 10:9-10절 — "시인과 믿음"</div>
+            본문의 핵심은 구원이 <strong>마음의 믿음(내면)</strong>과 <strong>입의 시인(외면)</strong>이 함께 이루어진다는 것이다. 바울이 말하는 "주(Lord)"는 예수님이 단순한 선생이 아니라 <strong>하나님과 동등한 존재</strong>임을 고백하는 것이다.
+          </p>
+          <p>
+            "구원을 얻으리라"는 미래형이지만 이것은 현재적 확신을 포함한다. 믿는 순간 이미 구원의 영역 안에 있다는 선언이다. 영접기도는 이 "입으로 시인"의 실제적 표현이다.
+          </p>
+          <div class="theo-verse">
+            "사람이 마음으로 믿어 의에 이르고 입으로 시인하여 구원에 이르느니라" — 롬 10:10
+          </div>
+        </div>
+      </div>
+
+      <div class="theo-card">
+        <div class="theo-card-header">
+          <div class="theo-badge badge-gold">핵심 교리</div>
+        </div>
+        <div class="theo-body">
+          <p>          <div class="theo-title">대속(代贖) — 예수님이 왜 죽으셔야 했는가</div>
+            대속이란 <strong>우리 대신 값을 치러주는 것</strong>이다. 성경은 인간의 잘못(죄)이 하나님과의 관계를 단절시켰다고 말한다. 이 단절은 인간 스스로 회복할 수 없는 것이다.
+          </p>
+          <p>
+            예수님은 하나님의 아들로서 완전한 존재였기에 우리 모두를 대신할 수 있는 유일한 분이셨다. 십자가는 <strong>하나님의 공의(정의)와 사랑이 동시에 나타난 사건</strong>이다. 우리가 받아야 할 것을 예수님이 받으심으로, 우리는 하나님 앞에 설 수 있게 되었다.
+          </p>
+        </div>
+      </div>
+
+      <div class="theo-card">
+        <div class="theo-card-header">
+          <div class="theo-badge badge-green">핵심 교리</div>
+        </div>
+        <div class="theo-body">
+          <p>          <div class="theo-title">부활의 의미 — 왜 부활이 반드시 필요했는가</div>
+            부활은 단순히 예수님이 살아나셨다는 사건 이상이다. 부활은 세 가지를 증명한다:
+          </p>
+          <p>
+            <strong>① 정체성 확인:</strong> 예수님이 하나님의 아들이심을 증명한다. (롬 1:4)<br>
+            <strong>② 대속의 완성:</strong> 죽음으로 값을 치르고 살아나심으로 그 값이 완전히 치러졌음을 선언한다.<br>
+            <strong>③ 관계 회복의 선언:</strong> "이제 너희가 하나님 앞에 나올 수 있다"는 문이 열린 사건이다.
+          </p>
+          <p>
+            바울은 "그리스도께서 다시 살아나지 못하셨으면 너희의 믿음도 헛되다"(고전 15:17)고 말한다. 부활 없이는 복음도 없다.
+          </p>
+          <div class="theo-verse">
+            "예수는 우리 범죄함을 위하여 내줌이 되고 또한 우리를 의롭다 하심을 위하여 살아나셨느니라" — 롬 4:25
+          </div>
+        </div>
+      </div>
+
+      <div class="theo-card">
+        <div class="theo-card-header">
+          <div class="theo-badge badge-rust">신앙 적용</div>
+        </div>
+        <div class="theo-body">
+          <p>          <div class="theo-title">구원의 확신 — 교사가 먼저 확신을 가져야 한다</div>
+            이번 설교는 영접기도까지 인도하는 설교입니다. 소그룹 교사도 자신의 구원에 대한 <strong>흔들리지 않는 확신</strong>이 있어야 학생들에게 자연스럽게 전달됩니다.
+          </p>
+          <p>
+            혹시 학생이 "선생님은 언제 믿었어요?"라고 물어본다면, 짧고 진솔하게 자신의 이야기를 나눌 준비를 해두시면 좋습니다. <strong>완벽한 간증</strong>이 필요한 것이 아니라 <strong>진심 어린 한 마디</strong>면 충분합니다.
+          </p>
+          <div class="theo-verse">
+            "내가 확신하노니 사망이나 생명이나 ... 어떤 피조물이라도 우리를 우리 주 그리스도 예수 안에 있는 하나님의 사랑에서 끊을 수 없으리라" — 롬 8:38-39
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 6. 새친구 배려 -->
+  <div class="section" id="newfriend">
+    <div class="section-header">
+      <div class="section-icon icon-sage">🌱</div>
+      <div>
+        <div class="section-title">새친구 배려 가이드</div>
+        <div class="section-desc">오늘 처음 온 친구들을 위한 특별 주의사항</div>
+      </div>
+    </div>
+
+    <div class="nf-grid">
+      <div class="nf-item">
+        <div class="nf-icon">🏷</div>
+        <div>
+          <div class="nf-title">교회 용어 설명하기</div>
+          <div class="nf-text">나눔 중 "은혜", "은사", "성령" 같은 표현은 자연스럽게 풀어서 설명해 주세요. 새친구가 모르는 표현에 위축되지 않도록 배려해 주시면 좋습니다.</div>
+        </div>
+      </div>
+      <div class="nf-item">
+        <div class="nf-icon">😊</div>
+        <div>
+          <div class="nf-title">이름을 먼저 물어보기</div>
+          <div class="nf-text">나눔 시작 전 새친구 이름을 자연스럽게 물어보고 나눔 중 이름을 불러주세요. 가장 간단하지만 가장 따뜻한 환영입니다.</div>
+        </div>
+      </div>
+      <div class="nf-item">
+        <div class="nf-icon">🚪</div>
+        <div>
+          <div class="nf-title">영접기도는 강요하지 않기</div>
+          <div class="nf-text">영접기도는 "초대"입니다. "아직 잘 모르겠으면 그냥 들어봐도 괜찮아"라는 말 한 마디가 오히려 마음을 더 열게 합니다.</div>
+        </div>
+      </div>
+      <div class="nf-item">
+        <div class="nf-icon">🤫</div>
+        <div>
+          <div class="nf-title">나눔 내용은 소그룹 안에서만</div>
+          <div class="nf-text">학생들이 나눈 내용은 다른 곳에 공유하지 않아 주세요. 처음부터 "여기서 나눈 건 우리끼리야"라는 신뢰를 만들어 주시면 좋습니다.</div>
+        </div>
+      </div>
+      <div class="nf-item">
+        <div class="nf-icon">💬</div>
+        <div>
+          <div class="nf-title">억지로 답하게 하지 않기</div>
+          <div class="nf-text">새친구가 침묵해도 괜찮습니다. "그냥 들어도 돼"라는 분위기를 만드는 것이 더 중요합니다. 침묵은 거부가 아니라 생각 중인 것임을 기억해 주세요.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-verse">"나는 사랑받는 존재야"</div>
+  <div class="footer-text">
+    중등부 새친구 초청 예배 | 교사 교육 자료  </div>
+</div>
+
+</body>
+</html>

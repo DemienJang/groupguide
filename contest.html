@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>보배마을 백일장</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Gowun+Dodum&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html,body{
+    font-family:'Gowun Dodum',sans-serif;
+    background:#1a3d0a;
+    min-height:100vh;
+    display:flex;align-items:center;justify-content:center;
+    padding:1.5rem;
+  }
+
+  .card{
+    width:100%;max-width:420px;
+    background:linear-gradient(160deg,#1a3d0a 0%,#275317 50%,#3a6b1a 100%);
+    border-radius:24px;
+    border:2px solid rgba(201,168,76,.4);
+    overflow:hidden;
+    box-shadow:0 24px 60px rgba(0,0,0,.6);
+    position:relative;
+  }
+  .card::before{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background-image:repeating-linear-gradient(135deg,rgba(201,168,76,.05) 0 2px,transparent 2px 10px);
+  }
+
+  /* 상단 로고 바 */
+  .top-bar{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:.9rem 1.4rem .6rem;position:relative;z-index:1;
+  }
+  .logo-church{height:24px;opacity:.75;}
+  .logo-youth{height:46px;}
+
+  /* 타이틀 */
+  .title-area{
+    text-align:center;padding:.2rem 1.4rem 1rem;
+    position:relative;z-index:1;
+  }
+  .title-tag{
+    display:inline-block;
+    background:rgba(201,168,76,.2);border:1px solid rgba(201,168,76,.5);
+    border-radius:20px;padding:.25rem .9rem;
+    font-size:.72rem;letter-spacing:.18em;color:#c9a84c;margin-bottom:.7rem;
+  }
+  .title-chars{display:flex;justify-content:center;gap:0;margin-bottom:.5rem;}
+  .title-chars img{height:72px;object-fit:contain;
+    filter:drop-shadow(0 4px 8px rgba(0,0,0,.5));}
+  .title-main{
+    font-family:'Gowun Batang';font-weight:700;font-size:2rem;
+    color:#f8f4e8;line-height:1.2;
+  }
+  .title-main .gold{color:#c9a84c;}
+  .title-sub{font-size:.82rem;color:#a8c488;margin-top:.4rem;letter-spacing:.05em;}
+
+  /* 구분선 */
+  .divider{
+    height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,.4),transparent);
+    margin:0 1.4rem;
+  }
+
+  /* 주제 */
+  .subject-area{
+    margin:1.1rem 1.2rem;
+    background:rgba(255,255,255,.07);
+    border:1px solid rgba(201,168,76,.3);
+    border-radius:14px;padding:1.1rem 1.2rem;
+    text-align:center;position:relative;z-index:1;
+  }
+  .subject-label{
+    font-size:.72rem;letter-spacing:.2em;color:#a8c488;
+    margin-bottom:.6rem;
+  }
+  .subject-text{
+    font-family:'Gowun Batang';font-size:1rem;
+    color:#f0e8d0;line-height:1.9;
+  }
+  .subject-text .blank{
+    display:inline-block;min-width:4rem;
+    border-bottom:2px solid #c9a84c;
+    color:#c9a84c;font-weight:700;
+    padding:0 .2rem;
+  }
+  .subject-note{
+    font-size:.76rem;color:#88a870;margin-top:.7rem;
+  }
+
+  /* 시상 */
+  .awards{
+    display:grid;grid-template-columns:1fr 1fr;
+    gap:.7rem;margin:0 1.2rem 1rem;
+    position:relative;z-index:1;
+  }
+  .award{
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(201,168,76,.25);
+    border-radius:14px;padding:.9rem .8rem;text-align:center;
+  }
+  .award img{height:56px;object-fit:contain;margin-bottom:.35rem;
+    filter:drop-shadow(0 2px 4px rgba(0,0,0,.4));}
+  .award-name{
+    font-family:'Gowun Batang';font-weight:700;
+    color:#c9a84c;font-size:1.15rem;
+  }
+  .award-desc{font-size:.78rem;color:#b0cc90;margin-top:.2rem;}
+  .award-prize{
+    display:inline-block;margin-top:.45rem;
+    background:rgba(201,168,76,.2);border-radius:20px;
+    padding:.18rem .65rem;font-size:.72rem;color:#c9a84c;
+  }
+
+  /* 제출 안내 */
+  .info-area{
+    margin:0 1.2rem 1rem;position:relative;z-index:1;
+  }
+  .info-item{
+    display:flex;align-items:center;gap:.65rem;
+    padding:.5rem .8rem;border-radius:10px;
+    background:rgba(255,255,255,.05);
+    margin-bottom:.4rem;
+  }
+  .info-item img{width:32px;height:32px;object-fit:contain;flex:none;}
+  .info-text{font-size:.86rem;color:#c8ddb0;line-height:1.4;}
+  .info-text b{color:#f0e8d0;font-weight:700;}
+
+  /* 캐릭터 데코 하단 */
+  .bottom-chars{
+    display:flex;align-items:flex-end;justify-content:center;
+    gap:0;padding:.4rem 0 0;
+    position:relative;z-index:1;
+  }
+  .bc{height:80px;object-fit:contain;
+    filter:drop-shadow(0 3px 6px rgba(0,0,0,.4));}
+
+  /* 하단 교회 로고 */
+  .bottom-bar{
+    text-align:center;padding:.7rem 1.4rem .9rem;
+    position:relative;z-index:1;
+    border-top:1px solid rgba(201,168,76,.15);
+    margin-top:.3rem;
+  }
+  .bottom-bar img{height:22px;opacity:.6;}
+  .bottom-bar p{font-size:.68rem;color:#7a9060;margin-top:.3rem;letter-spacing:.08em;}
+</style>
+</head>
+<body>
+<div class="card">
+
+  <!-- 상단 로고 -->
+  <div class="top-bar">
+    <img src="https://emojipack.netlify.app/emoji/logo_church_white.png" class="logo-church" alt="안락교회">
+    <img src="https://emojipack.netlify.app/emoji/logo_youth1.png" class="logo-youth" alt="시대용사 보배마을">
+  </div>
+
+  <!-- 타이틀 -->
+  <div class="title-area">
+    <div class="title-tag">다시, 소망을 기다리며</div>
+    <div class="title-main">보배마을 <span class="gold">백일장</span></div>
+    <div class="title-sub">설교 내용을 기억하며, 한 문장을 써봐요</div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 주제 -->
+  <div class="subject-area">
+    <div class="subject-label">✦ 주 제 ✦</div>
+    <div class="subject-text">
+      나는 지금 <span class="blank">&nbsp;&nbsp;&nbsp;&nbsp;</span>이 무너진 것 같다.<br>
+      그래도 나는 <span class="blank">&nbsp;&nbsp;&nbsp;&nbsp;</span>을 소망한다.
+    </div>
+    <div class="subject-note">빈칸을 채워 나만의 문장을 완성해요 ✏️</div>
+  </div>
+
+  <!-- 시상 -->
+  <div class="awards">
+    <div class="award">
+      <img src="https://emojipack.netlify.app/emoji/emoji32_prayerful.png" alt="진상">
+      <div class="award-name">🥇 진상</div>
+      <div class="award-desc">진심을 다해 쓴 사람</div>
+      <div class="award-prize">🍦 아이스크림 쿠폰</div>
+    </div>
+    <div class="award">
+      <img src="https://emojipack.netlify.app/emoji/emoji12_confident.png" alt="웃상">
+      <div class="award-name">😂 웃상</div>
+      <div class="award-desc">웃기게 쓴 사람</div>
+      <div class="award-prize">🍦 아이스크림 쿠폰</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 제출 안내 -->
+  <div class="info-area" style="margin-top:.9rem;">
+    <div class="info-item">
+      <img src="https://emojipack.netlify.app/emoji/emoji27_welcoming.png" alt="">
+      <div class="info-text"><b>제출 방법</b><br>손으로 쓰고 사진찍어 단톡방에 올리기</div>
+    </div>
+    <div class="info-item">
+      <img src="https://emojipack.netlify.app/emoji/emoji22_proud.png" alt="">
+      <div class="info-text"><b>마감</b>&nbsp; 토요일 오후까지</div>
+    </div>
+    <div class="info-item">
+      <img src="https://emojipack.netlify.app/emoji/emoji08_affection.png" alt="">
+      <div class="info-text"><b>쿠폰이 많아요!</b>&nbsp; 모두 참여해줘요 😊</div>
+    </div>
+  </div>
+
+  <!-- 하단 캐릭터 -->
+  <div class="bottom-chars">
+    <img src="https://emojipack.netlify.app/emoji/emoji07_love.png" class="bc" alt="">
+    <img src="https://emojipack.netlify.app/emoji/emoji06_starstruck.png" class="bc" alt="">
+    <img src="https://emojipack.netlify.app/emoji/emoji11_giving.png" class="bc" alt="">
+  </div>
+
+  <!-- 하단 로고 -->
+  <div class="bottom-bar">
+    <img src="https://emojipack.netlify.app/emoji/logo_church_white.png" alt="안락교회">
+    <p>안락교회 보배마을 중등부</p>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>그날, 당신은 준비됐나요? - 보배마을 중등부 교사 가이드</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            /* Color Palette */
+            --bg-parchment: #FDFBF7;
+            --text-midnight: #2C3E50;
+            --accent-gold: #D4AF37;
+            --accent-blue: #8E9EAB;
+            
+            /* Grid & Lines */
+            --grid-line: rgba(142, 158, 171, 0.12);
+            --border-light: rgba(44, 62, 80, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-parchment);
+            color: var(--text-midnight);
+            font-family: 'Noto Sans KR', sans-serif;
+            line-height: 1.7;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* -------------------------------------
+           Background Effects: Blueprint & Dawn
+           ------------------------------------- */
+        .blueprint-grid {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background-image: 
+                linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+                linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+            background-size: 40px 40px;
+            z-index: -3;
+        }
+
+        .dawn-light {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(140px);
+            z-index: -2;
+            pointer-events: none;
+            opacity: 0.45;
+            transition: all 2s ease-in-out;
+        }
+
+        .dawn-gold {
+            top: -15%; right: -10%;
+            width: 70vw; height: 70vw;
+            background: radial-gradient(circle, var(--accent-gold) 0%, rgba(212,175,55,0) 70%);
+        }
+
+        .dawn-blue {
+            bottom: -20%; left: -10%;
+            width: 80vw; height: 80vw;
+            background: radial-gradient(circle, var(--accent-blue) 0%, rgba(142,158,171,0) 70%);
+        }
+
+        /* -------------------------------------
+           Typography & Elements
+           ------------------------------------- */
+        h1, h2, h3, h4, .serif-text {
+            font-family: 'Nanum Myeongjo', serif;
+        }
+
+        .italic-num {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            color: var(--accent-gold);
+            font-size: 1.3em;
+            margin-right: 10px;
+            font-weight: 600;
+        }
+
+        .sacred-highlight {
+            position: relative;
+            font-weight: 700;
+            color: var(--text-midnight);
+            display: inline-block;
+            z-index: 1;
+        }
+
+        .sacred-highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background-color: rgba(212, 175, 55, 0.3); /* Gold highlight */
+            z-index: -1;
+        }
+
+        /* -------------------------------------
+           Layout & Containers
+           ------------------------------------- */
+        .wrapper {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 100px 5vw;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            margin-bottom: 120px;
+            position: relative;
+        }
+
+        .hero p.subtitle {
+            font-family: 'Nanum Myeongjo', serif;
+            color: var(--accent-blue);
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.4;
+            margin-bottom: 30px;
+            color: var(--text-midnight);
+        }
+
+        .hero .scripture {
+            display: inline-block;
+            border: 1px solid var(--accent-gold);
+            padding: 8px 24px;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            color: var(--accent-gold);
+            letter-spacing: 1px;
+        }
+
+        /* Two Column Layout */
+        .section-container {
+            margin-bottom: 120px;
+        }
+
+        .section-header {
+            margin-bottom: 50px;
+            border-bottom: 1px solid var(--border-light);
+            padding-bottom: 20px;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-header h2::before {
+            content: '';
+            display: inline-block;
+            width: 30px;
+            height: 2px;
+            background-color: var(--accent-gold);
+            margin-right: 15px;
+        }
+
+        .grid-layout {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        @media (min-width: 860px) {
+            .grid-layout.two-col {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Cards & Boxes */
+        .blueprint-card {
+            background: rgba(253, 251, 247, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(142, 158, 171, 0.3);
+            padding: 40px;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .blueprint-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(44, 62, 80, 0.05);
+            border-color: rgba(212, 175, 55, 0.5);
+        }
+
+        .blueprint-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--text-midnight);
+        }
+
+        .q-box {
+            font-style: italic;
+            color: var(--accent-blue);
+            margin-bottom: 25px;
+            padding-left: 20px;
+            border-left: 2px solid var(--accent-blue);
+            font-size: 1.05rem;
+        }
+
+        .role-box {
+            background: rgba(212, 175, 55, 0.05);
+            padding: 20px;
+            border-radius: 4px;
+            border-left: 3px solid var(--accent-gold);
+            font-size: 0.95rem;
+        }
+
+        .role-box strong {
+            color: var(--accent-gold);
+            font-family: 'Nanum Myeongjo', serif;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        /* Deep Reading Section */
+        .deep-reading-list {
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+        }
+
+        .deep-item {
+            position: relative;
+            padding-left: 0;
+        }
+
+        @media (min-width: 768px) {
+            .deep-item {
+                padding-left: 80px;
+            }
+            .deep-item .italic-num {
+                position: absolute;
+                left: 0;
+                top: -5px;
+                font-size: 2.5rem;
+                opacity: 0.3;
+            }
+        }
+
+        .deep-item h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+        
+        .deep-item p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .quote-block {
+            margin-top: 20px;
+            padding: 20px 30px;
+            background-color: var(--text-midnight);
+            color: var(--bg-parchment);
+            border-radius: 2px;
+            font-family: 'Nanum Myeongjo', serif;
+            font-style: italic;
+            letter-spacing: 0.5px;
+        }
+
+        /* Bible Passage Block */
+        .bible-passage {
+            max-width: 800px;
+            margin: -40px auto 100px auto;
+            padding: 40px 50px;
+            background: rgba(253, 251, 247, 0.7);
+            backdrop-filter: blur(8px);
+            border-top: 1px solid var(--accent-gold);
+            border-bottom: 1px solid var(--accent-gold);
+            position: relative;
+        }
+
+        .bible-passage h3 {
+            font-family: 'Nanum Myeongjo', serif;
+            color: var(--accent-gold);
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+        }
+
+        .bible-passage p {
+            font-family: 'Nanum Myeongjo', serif;
+            color: var(--text-midnight);
+            line-height: 2.1;
+            margin-bottom: 12px;
+            text-align: justify;
+            font-size: 1.05rem;
+            word-break: keep-all;
+        }
+
+        .bible-passage .verse-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 0.75em;
+            color: var(--accent-blue);
+            vertical-align: super;
+            margin-right: 6px;
+            font-weight: 600;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Background Elements -->
+    <div class="blueprint-grid"></div>
+    <div class="dawn-light dawn-gold"></div>
+    <div class="dawn-light dawn-blue"></div>
+
+    <div class="wrapper">
+        <!-- HERO SECTION -->
+        <header class="hero">
+            <p class="subtitle">4월 19일<br>보배마을 중등부 교사 교육 자료</p>
+            <h1>그날, 당신은<br>준비됐나요?</h1>
+            <div class="scripture">베드로후서 3장 8-14절 (새번역)</div>
+        </header>
+
+        <!-- BIBLE PASSAGE SECTION -->
+<style>
+  .bible-passage p {
+    display: flex;          /* 숫자와 본문을 가로로 배치 */
+    align-items: flex-start; /* 윗줄 기준으로 정렬 */
+    margin-bottom: 15px;    /* 구절 사이 간격 */
+    line-height: 1.6;       /* 줄 간격 */
+  }
+
+  .verse-num {
+    min-width: 25px;        /* 숫자가 차지할 공간 (조절 가능) */
+    display: inline-block;
+    font-style: italic;     /* 이미지처럼 기울임꼴 */
+    font-size: 0.9em;       /* 숫자를 약간 작게 */
+    color: #888;            /* 숫자 색상을 약간 흐리게 */
+    margin-right: 5px;      /* 숫자와 본문 사이 간격 */
+    flex-shrink: 0;         /* 숫자가 찌그러지지 않게 고정 */
+  }
+</style>
+
+<section class="bible-passage">
+    <p><span class="verse-num">8</span> 사랑하는 여러분, 이 한 가지만은 잊지 마십시오. 주님께는 하루가 천 년 같고, 천 년이 하루 같습니다.</p>
+    <p><span class="verse-num">9</span> 어떤 이들이 생각하는 것과 같이, 주님께서는 약속을 더디 지키시는 것이 아닙니다. 도리어 여러분을 위하여 오래 참으시는 것입니다. 하나님께서는 아무도 멸망하지 않고, 모두 회개하는 데에 이르기를 바라십니다.</p>
+    <p><span class="verse-num">10</span> 그러나 주님의 날은 도둑같이 올 것입니다. 그 날에 하늘은 요란한 소리를 내면서 사라지고, 원소들은 불에 녹아버리고, 땅과 그 안에 있는 모든 일은 드러날 것입니다.</p>
+    <p><span class="verse-num">11</span> 이렇게 모든 것이 녹아버릴 터인데, [여러분은] 어떠한 사람이 되어야 하겠습니까? 여러분은 거룩한 행실과 경건한 삶 속에서</p>
+    <p><span class="verse-num">12</span> 하나님의 날이 오기를 기다리고, 그 날을 앞당기도록 하여야 하지 않겠습니까? 그 날에 하늘은 불타서 없어지고, 원소들은 타서 녹아버릴 것입니다.</p>
+    <p><span class="verse-num">13</span> 그러나 우리는 주님의 약속을 따라 정의가 깃들여 있는 새 하늘과 새 땅을 기다리고 있습니다.</p>
+    <p><span class="verse-num">14</span> 사랑하는 여러분, 여러분이 이것을 기다리고 있으니, 티도 없고 흠도 없는 사람으로, 아무 탈이 없이 하나님 앞에 나타날 수 있도록 힘쓰십시오.</p>
+</section>
+
+        <!-- SECTION 1: Small Group Setup -->
+        <section class="section-container">
+            <div class="section-header">
+                <h2>설교 전 소그룹 나눔 질문</h2>
+            </div>
+            
+            <div class="grid-layout two-col">
+                <!-- Q1 -->
+                <div class="blueprint-card">
+                    <h3><span class="italic-num">1</span> 일상 나누기 <span style="font-size:0.8em; color:var(--accent-blue); font-weight:normal;">(위로와 격려)</span></h3>
+                    <div class="q-box">
+                        "(2,3학년의 경우) 요즘 한창 시험 기간인데 이번 주 학원이나 공부 스케줄이 어떻게 돼?<br>
+			(1학년의 경우) 중학교에 올라와서 학습량이 많아지고 내용도 어려워졌을텐데 요즘 공부 스케줄이 어떻게 돼?<br>
+			시험을 준비하면서 또 공부를 하면서 체력적으로나 마음적으로 어떤 부분이 가장 힘들고 걱정되는지 솔직하게 나눠보자."
+                    </div>
+                    <div class="role-box">
+                        <strong>교사의 역할</strong>
+                        학생들의 고단한 일상을 있는 그대로 들어주고, 그들의 스트레스와 수고를 깊이 공감하며 위로해 줍니다.
+                    </div>
+                </div>
+
+                <!-- Q2 -->
+                <div class="blueprint-card">
+                    <h3><span class="italic-num">2</span> 속마음 나누기 <span style="font-size:0.8em; color:var(--accent-blue); font-weight:normal;">(가치관 파악)</span></h3>
+                    <div class="q-box">
+                        "우리가 매일 늦게까지 자고 싶은 것도 참아가며 이렇게까지 빡세게 공부하는 진짜 이유는 뭘까? 누가 시켜서인지, 아니면 나만의 다른 목표가 있는지, 아니면 막연한 노력인지 나눠보자."
+                    </div>
+                    <div class="role-box">
+                        <strong>교사의 역할</strong>
+                        정답(하나님의 영광 등)을 제시하거나 가르치려 하지 말고 어떤 대답이 나오든 고개를 끄덕이며 <span class="sacred-highlight">전적으로 수용하고 공감</span>해 줍니다.
+                    </div>
+                </div>
+
+                <!-- Q3 (Spans full width on desktop if needed, but fits in grid) -->
+                <div class="blueprint-card" style="grid-column: 1 / -1;">
+                    <h3><span class="italic-num">3</span> 말씀으로 들어가기 <span style="font-size:0.8em; color:var(--accent-blue); font-weight:normal;">(설교를 향한 징검다리)</span></h3>
+                    <div class="q-box">
+                        "오늘 설교 본문이 베드로후서 3장 8-14절인데 같이 읽어볼까? 이 본문은 예수님의 '재림'에 대한 이야기야. (읽고 나서) 예수님이 다시 오신다는 사실에 대해 평소에 어떻게 생각하고 있었는지 자유롭게 말해보자."
+                    </div>
+                    <div class="role-box">
+                        <strong>교사의 역할</strong>
+                        아이들이 재림에 대해 얼마나 무관심한지, 혹은 어떻게 오해하고 있는지(두려움, 남의 일 등)를 파악하며 자연스럽게 설교에 집중할 수 있도록 마음을 열어줍니다.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- SECTION 2: Planning & Flow -->
+        <section class="section-container">
+            <div class="section-header">
+                <h2>설교의 중점과 핵심 메시지</h2>
+            </div>
+
+            <div class="grid-layout">
+                <div class="blueprint-card">
+                    <h3>이번 주 설교의 중점</h3>
+                    <p>아이들은 현재 중간고사와 학업이라는 압박감 속에 있습니다. 설교 전에 아이들의 고단함을 충분히 들어주면서 아이들은 마음을 다독입니다.</p>
+                    <p>소그룹 나눔에서 아이들의 현실적인 목표와 재림에 대한 무관심을 드러내고, 이어지는 설교를 통해 부드럽지만 강한 충격을 주며 <strong>'진짜 공부하는 이유'</strong>와 <strong>'재림을 준비하는 삶'</strong>으로 시선을 돌려놓는 것입니다.</p>
+                </div>
+
+                <div class="blueprint-card">
+                    <h3>설교의 핵심 메시지</h3>
+                    <p>아이들이 코피 터지게 준비하는 <span class="sacred-highlight">'학교 시험'</span>과 전혀 준비하지 않고 있는 <span class="sacred-highlight">'예수님의 재림'</span>을 대조합니다.</p>
+                    <p>그 준비란 도덕적 완벽주의자가 되는 것이 아닙니다. 자신의 연약함을 인정하고 주님의 은혜에 기대어 공부를 나만의 이기적인 성공이 아닌 <strong>'세상을 섬길 거룩한 실력'</strong>을 쌓는 과정으로 여기며 매일 성실하게 살아가는 것입니다.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- SECTION 3: Deep Reading -->
+        <section class="section-container">
+            <div class="section-header">
+                <h2>베드로후서 3장 깊이 읽기 <span style="font-size: 0.6em; font-weight: normal; position: relative; top: 6px;"> (교사용)</span></h2>
+            </div>	
+
+            <div class="deep-reading-list">
+                
+                <div class="deep-item">
+                    <span class="italic-num">1</span>
+                    <h3>하나님의 '오래 참으심'에 담긴 신학적 의미 <span style="font-size:0.7em; color:var(--accent-blue);">(구원론적 관점)</span></h3>
+                    <p>본문 9절에서 재림이 늦어지는 이유를 '오래 참으심' 때문이라고 말합니다. 여기서 사용된 단어인 '마크로뒤미아(Makrothymia)'는 시간을 때우는 것이 아니라, 분노를 미루고 구원의 기회를 주는 <span class="sacred-highlight">적극적인 사랑</span>을 뜻합니다.</p>
+                    <p>재림의 지연은 약속이 희미해진 것이 아니라 <strong>'심판의 유예'</strong>입니다. 지금 우리가 누리는 이 시간은 한 영혼이라도 더 건져내시려는 하나님의 눈물겨운 '배려의 시간'입니다.</p>
+                    <div class="quote-block">
+                        "하나님이 너를 너무 사랑하셔서 네가 정말 주님을 인격적으로 만날 때까지 온 우주의 종말을 뒤로 미루고 기다려 주고 계신 거야."
+                    </div>
+                </div>
+
+                <div class="deep-item">
+                    <span class="italic-num">2</span>
+                    <h3>'해체'가 아닌 '갱신'으로서의 종말 <span style="font-size:0.7em; color:var(--accent-blue);">(종말론적 관점)</span></h3>
+                    <p>10절과 12절의 '물질이 뜨거운 불에 녹아진다'는 표현 때문에 종말을 파괴로만 생각합니다. 하지만 성경이 말하는 종말의 핵심은 '완전한 멸망'이 아니라 <span class="sacred-highlight">'새로운 창조를 위한 정화'</span>입니다.</p>
+                    <p>마치 금광석을 뜨거운 불에 넣어 불순물을 제거하고 순금을 얻어내는 제련 과정과 같습니다. 세상의 악과 모순을 불태우고 처음 설계하셨던 '새 하늘과 새 땅'으로 회복시키시는 것입니다. 종말은 끝이 아니라 <strong>'진짜 시작'</strong>입니다.</p>
+                </div>
+
+                <div class="deep-item">
+                    <span class="italic-num">3</span>
+                    <h3>하나님의 날을 '앞당기는' 성도의 삶 <span style="font-size:0.7em; color:var(--accent-blue);">(인간의 책임과 하나님의 주권)</span></h3>
+                    <p>12절의 '바라보고 간절히 사모하라'는 헬라어 원문으로 그 날을 <strong>'재촉하다'</strong> 혹은 <strong>'앞당기다'</strong>라는 의미를 내포합니다.</p>
+                    <p>성도가 이 땅에서 거룩하게 살고 복음을 전하는 삶이 주님의 다시 오심을 앞당기는 역할을 합니다. 우리 보배마을 교사로서의 우리 삶이 우주적인 의미를 지닌다는 자부심을 가져도 좋습니다. 우리 아이들의 일상도 마찬가지 입니다.</p>
+                    <div class="quote-block">
+                        "우리가 학교에서 정직하게 행동하고 친구를 사랑하는 그 작은 실천들이 예수님이 오시는 길을 닦는 일이야."
+                    </div>
+                </div>
+
+                <div class="deep-item">
+                    <span class="italic-num">4</span>
+                    <h3>'점도 없고 흠도 없이'의 복음적 해석 <span style="font-size:0.7em; color:var(--accent-blue);">(성화의 원리)</span></h3>
+                    <p>14절의 명령은 도덕적 완벽주의자가 되라는 뜻이 아닙니다. '점과 흠'이 없는 상태는 구약 제물의 표현으로, 죄를 짊어지신 <span class="sacred-highlight">'점 없고 흠 없는 어린양' 되신 예수 그리스도 안에 거하라</span>는 초대입니다.</p>
+                    <p>우리는 넘어지지만 날마다 주님의 보혈 아래로 나아가고 연결되어 있으려고 애쓰는 중심을 하나님은 완벽하게 봐주십니다.</p>
+                </div>
+
+                <div class="deep-item">
+                    <span class="italic-num">5</span>
+                    <h3>교사로서 기억해야 할 태도 : 종말론적 긴장 속의 일상</h3>
+                    <p>세상은 '미래의 성공'을 위해 '현재의 행복'을 희생하라고 하지만, 성경은 '영원한 미래'를 소망하며 <strong>'오늘의 일상'을 거룩하게 즐거워하라</strong>고 가르칩니다.</p>
+                    <p>보이지 않는 영원한 가치를 가르치는 선생님이야말로 아이들에게 재림을 준비시키는 최고의 안내자입니다.</p>
+                    <div class="quote-block" style="background-color: var(--accent-gold); color: var(--text-midnight);">
+                        "네가 오늘 주님을 의지하며 성실하게 공부한 그 마음은 영원히 남는단다."<br>그리고 주님을 의지하며 아이들을 섬기는 선생님의 마음도 영원히 남을거에요.♥
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+</body>
+</html>

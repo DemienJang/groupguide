@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>보배마을 소그룹 가이드 · 누구를 바라보고 있나요?</title>
+  <meta name="description" content="보배마을-교사가 먼저 읽는 말씀" />
+  <meta property="og:title" content="보배마을 소그룹 가이드 · 교사가 먼저 읽는 말씀" />
+  <meta property="og:description" content="교사가 먼저 읽는 말씀 · 사도행전 7:54-60" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://emojipack.netlify.app/emoji/logo_youth5.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --green:#275317;
+      --green-2:#14350e;
+      --mint:#eaf5de;
+      --cream:#fffaf0;
+      --gold:#f2c94c;
+      --coral:#ff7b64;
+      --ink:#24311f;
+      --soft:#f4f8ee;
+      --line:rgba(39,83,23,.18);
+      --shadow:0 18px 40px rgba(20,53,14,.15);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(242,201,76,.22), transparent 34rem),
+        linear-gradient(180deg,#f8fff0 0%, #fffdf5 40%, #eef7e5 100%);
+      font-family:'Gowun Dodum',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+      line-height:1.72;
+      word-break:keep-all;
+      padding-bottom:90px;
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{width:min(980px,92vw);margin:0 auto}
+    header.hero{
+      position:relative;
+      overflow:hidden;
+      background:linear-gradient(135deg,var(--green) 0%, #356b23 48%, #193f10 100%);
+      color:white;
+      border-bottom-left-radius:34px;
+      border-bottom-right-radius:34px;
+      box-shadow:var(--shadow);
+      padding:28px 0 38px;
+    }
+    .hero:before{
+      content:"";
+      position:absolute; inset:0;
+      background-image:linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);
+      background-size:22px 22px;
+      opacity:.55;
+    }
+    .hero .wrap{position:relative;z-index:2}
+    .topbar{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:22px}
+    .brand{display:flex;align-items:center;gap:12px;font-size:.94rem;opacity:.96}
+    .brand img{height:32px;width:auto;border-radius:12px;padding:4px}
+    .pill{display:inline-flex;align-items:center;gap:8px;padding:0;border-radius:0;background:none;border:none;font-size:.88rem}
+    .pill img{height:42px;width:auto;display:block}
+    .hero-grid{display:grid;grid-template-columns:1.55fr .75fr;gap:24px;align-items:center}
+    .eyebrow{color:var(--gold);font-weight:700;letter-spacing:.03em;margin:0 0 10px}
+    h1{font-family:'Gowun Batang',serif;font-size:clamp(2.15rem,6vw,4.6rem);line-height:1.05;margin:0 0 14px;font-weight:700}
+    .subtitle{font-size:clamp(1.05rem,2.5vw,1.35rem);opacity:.95;margin:0 0 18px}
+    .identity{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:22px;padding:16px 18px;max-width:720px}
+    .identity strong{color:var(--gold)}
+    .hero-card{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.25);border-radius:28px;padding:18px;display:flex;flex-direction:column;align-items:center;text-align:center}
+    .hero-card img{width:min(170px,42vw);height:auto;filter:drop-shadow(0 16px 22px rgba(0,0,0,.22))}
+    .hero-card p{margin:8px 0 0;font-size:.95rem;color:#fff8d8}
+    main{padding:28px 0 30px}
+    section{scroll-margin-top:18px;margin:26px 0}
+    .section-head{display:flex;align-items:center;gap:12px;margin:0 0 14px}
+    .badge-num{width:40px;height:40px;border-radius:14px;background:var(--green);color:white;display:grid;place-items:center;font-weight:700;box-shadow:0 8px 18px rgba(39,83,23,.2)}
+    h2{font-family:'Gowun Batang',serif;font-size:clamp(1.55rem,4vw,2.15rem);margin:0;color:var(--green-2)}
+    .card{background:rgba(255,255,255,.88);border:1px solid var(--line);border-radius:26px;padding:22px;box-shadow:0 10px 28px rgba(20,53,14,.08)}
+    .grid{display:grid;gap:16px}
+    .two{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .three{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .keyline{font-size:1.20rem;line-height:1.52;font-weight:700;color:var(--green-2);margin:0}
+    .keyline mark{background:linear-gradient(180deg,transparent 48%, rgba(242,201,76,.55) 48%);color:inherit;padding:0 .1em}
+    .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+    .tag{padding:7px 11px;border-radius:999px;background:#edf6e7;border:1px solid var(--line);font-size:.92rem;color:#315b20}
+    .goal{border-left:5px solid var(--gold);background:#fff8d8;border-radius:18px;padding:16px 18px;margin-top:16px}
+    .flow{counter-reset:flow;display:grid;gap:12px}
+    .flow-item{position:relative;display:grid;grid-template-columns:48px 1fr;gap:12px;align-items:start;background:var(--soft);border:1px solid var(--line);border-radius:20px;padding:14px}
+    .flow-item:before{counter-increment:flow;content:counter(flow);width:42px;height:42px;border-radius:15px;background:white;border:2px solid rgba(39,83,23,.16);display:grid;place-items:center;color:var(--green);font-weight:700;font-size:1.15rem}
+    .flow-item b{display:block;font-size:1.07rem;color:var(--green-2);margin-bottom:2px}
+    .flow-item p{margin:0;color:#52624d;font-size:.96rem}
+    .point{display:flex;gap:12px;align-items:flex-start;background:white;border:1px solid var(--line);border-radius:20px;padding:16px}
+    .point .icon{font-size:1.55rem;line-height:1}
+    .point h3{margin:0 0 6px;font-size:1.1rem;color:var(--green-2)}
+    .point p{margin:0;color:#4d5d48}
+    details{background:white;border:1px solid var(--line);border-radius:20px;padding:0;overflow:hidden}
+    summary{cursor:pointer;list-style:none;padding:16px 18px;font-weight:700;color:var(--green-2);display:flex;justify-content:space-between;align-items:center;gap:12px}
+    summary::-webkit-details-marker{display:none}
+    summary:after{content:"＋";color:var(--coral);font-size:1.2rem;font-weight:700}
+    details[open] summary:after{content:"－"}
+    .detail-body{padding:0 18px 18px;color:#4c5e48}
+    .dialogue{display:grid;gap:10px;margin-top:8px}
+    .speech{border-radius:18px;padding:13px 15px;border:1px solid var(--line)}
+    .student{background:#f5f7fb}.teacher{background:#fff7df}
+    .speech b{display:inline-block;margin-right:6px;color:var(--green)}
+    .questions{display:grid;gap:14px;counter-reset:q}
+    .q-card{position:relative;background:#fff;border:1px solid var(--line);border-radius:22px;padding:18px 18px 18px 68px}
+    .q-card:before{counter-increment:q;content:"Q" counter(q);position:absolute;left:18px;top:19px;width:38px;height:38px;border-radius:14px;background:var(--green);color:white;display:grid;place-items:center;font-weight:700}
+    .q-card h3{margin:0 0 8px;font-size:1.18rem;color:var(--green-2)}
+    .q-card p{margin:0;color:#53624f}
+
+    .scripture-box{background:linear-gradient(135deg,#ffffff,#fffaf0);border:1px solid rgba(242,201,76,.5);border-radius:22px;padding:18px;margin:0 0 16px}
+    .scripture-box h3,.deep-card h3{margin:0 0 8px;font-size:1.13rem;color:var(--green-2)}
+    .deep-card h3{display:flex;align-items:center;gap:9px}
+    .deep-card h3 img{height:34px;width:auto;flex:0 0 auto;filter:drop-shadow(0 4px 8px rgba(39,83,23,.12))}
+    .scripture-ref{font-size:.92rem;color:#5d704f;margin:0 0 12px}
+    .scripture-text{font-family:'Gowun Batang',serif;font-size:1.03rem;line-height:1.85;color:#33402f;margin:0}
+    .verse{display:block;margin:.38rem 0}
+    .verse-num{display:inline-block;min-width:1.6em;color:var(--green);font-weight:700}
+    .deep-intro{background:#edf6e7;border:1px dashed rgba(39,83,23,.32);border-radius:18px;padding:14px 16px;margin-bottom:14px;color:#3f5d37}
+    .deep-grid{display:grid;gap:14px}
+    .deep-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:16px}
+    .deep-card p{margin:0;color:#4d5d48}
+    .deep-card ul{margin:8px 0 0;padding-left:1.2em;color:#4d5d48}
+    .deep-card li{margin:.2rem 0}
+    .tip{background:#ecf7e7;border:1px dashed rgba(39,83,23,.36);border-radius:18px;padding:14px 16px;margin-top:12px;color:#3f5d37}
+    .prayer{font-family:'Gowun Batang',serif;font-size:1.1rem;background:linear-gradient(135deg,#fff9e4,#ffffff);border:1px solid rgba(242,201,76,.45);border-radius:24px;padding:22px;color:#354232}
+    .emoji-corner{position:absolute;right:18px;bottom:-4px;width:82px;opacity:.96;filter:drop-shadow(0 10px 14px rgba(39,83,23,.18))}
+    .relative{position:relative;overflow:hidden}
+    .section-deco{height:40px;width:auto;margin-left:auto;opacity:.9;filter:drop-shadow(0 4px 8px rgba(39,83,23,.15))}
+    .point .icon img{height:38px;width:auto;display:block}
+    .bottom-nav{position:fixed;left:50%;bottom:14px;transform:translateX(-50%);width:min(760px,94vw);background:rgba(255,255,255,.92);backdrop-filter:blur(14px);border:1px solid rgba(39,83,23,.18);box-shadow:0 16px 34px rgba(20,53,14,.18);border-radius:999px;padding:8px;z-index:50;display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
+    .bottom-nav a{display:flex;align-items:center;justify-content:center;gap:5px;text-align:center;padding:10px 4px;border-radius:999px;font-size:.86rem;color:#36542c;white-space:nowrap}
+    .bottom-nav a img{height:22px;width:auto}
+    .bottom-nav a:hover{background:#edf6e7;color:var(--green-2)}
+    footer{padding:22px 0 40px;text-align:center;color:#55704b;font-size:.92rem}
+    footer img{height:44px;opacity:.9;margin-top:12px}
+    @media (max-width:760px){
+      .hero-grid,.two,.three{grid-template-columns:1fr}
+      .hero-card{display:none}
+      .card{padding:18px}
+      .bottom-nav a{font-size:.78rem;padding:9px 2px;gap:3px}
+      .flow-item{grid-template-columns:42px 1fr}
+      .emoji-corner{width:66px;opacity:.7}
+    }
+
+
+    /* Print / PDF optimization */
+    @media print{
+      @page{size:A4;margin:12mm 10mm}
+      html{scroll-behavior:auto}
+      body{
+        background:#fff !important;
+        color:#1f2b1b !important;
+        padding-bottom:0 !important;
+        font-size:10.5pt;
+        line-height:1.55;
+        -webkit-print-color-adjust:exact;
+        print-color-adjust:exact;
+      }
+      .wrap{width:100%;max-width:none;margin:0 auto}
+      .bottom-nav{display:none !important}
+      header.hero{
+        padding:10px 0 12px !important;
+        border-radius:0 0 16px 16px !important;
+        box-shadow:none !important;
+        background:linear-gradient(135deg,#275317 0%,#356b23 52%,#193f10 100%) !important;
+      }
+      .hero:before{display:none !important}
+      .topbar{margin-bottom:6px !important}
+      .brand img{height:20px !important}
+      .pill img{height:26px !important}
+      .hero-grid{grid-template-columns:1fr !important;gap:8px !important}
+      .hero-card{display:none !important}
+      .eyebrow{margin-bottom:2px !important;font-size:8.5pt !important}
+      h1{font-size:22pt !important;margin-bottom:6px !important;line-height:1.08 !important}
+      .subtitle{font-size:11pt !important;margin-bottom:8px !important}
+      .identity{padding:7px 10px !important;border-radius:12px !important;font-size:9.5pt !important}
+      main{padding:8px 0 0 !important}
+      section{margin:9px 0 !important;scroll-margin-top:0 !important;break-inside:auto;page-break-inside:auto}
+      .section-head{margin-bottom:8px !important;gap:8px !important}
+      .badge-num{width:28px !important;height:28px !important;border-radius:9px !important;font-size:10pt !important;box-shadow:none !important}
+      h2{font-size:16pt !important}
+      .card,.point,details,.q-card,.prayer,.flow-item,.speech,.goal{
+        box-shadow:none !important;
+      }
+      .point,details,.q-card,.prayer,.flow-item,.speech,.goal{
+        break-inside:avoid-page;
+        page-break-inside:avoid;
+      }
+      .card{break-inside:auto;page-break-inside:auto}
+      #overview .card{break-inside:avoid-page;page-break-inside:avoid}
+      .card{padding:11px !important;border-radius:14px !important;background:#fff !important}
+      .grid.two,.grid.three{grid-template-columns:1fr !important;gap:8px !important}
+      .keyline{font-size:11.3pt !important;line-height:1.38 !important}
+      .meta{gap:5px !important;margin-top:6px !important}
+      .tag{padding:3px 7px !important;font-size:8.5pt !important}
+      .goal{padding:8px 10px !important;margin-top:6px !important;border-radius:12px !important;background:#fff8d8 !important}
+
+      .scripture-box,.deep-card,.deep-intro{box-shadow:none !important;break-inside:avoid-page;page-break-inside:avoid}
+      .scripture-box{padding:10px 12px !important;border-radius:14px !important;margin-bottom:8px !important;background:#fff !important}
+      .scripture-box h3,.deep-card h3{font-size:11pt !important;margin-bottom:3px !important}
+      .deep-card h3 img{height:20px !important}
+      .scripture-ref{font-size:8.8pt !important;margin-bottom:6px !important}
+      .scripture-text{font-size:9.4pt !important;line-height:1.55 !important}
+      .verse{margin:.18rem 0 !important}
+      .deep-intro{padding:8px 10px !important;margin-bottom:8px !important;border-radius:12px !important;background:#fff !important;font-size:9.5pt !important}
+      .deep-grid{gap:8px !important}
+      .deep-card{padding:10px !important;border-radius:14px !important;background:#fff !important}
+      .deep-card p,.deep-card li{font-size:9.5pt !important;line-height:1.5 !important}
+      .flow{gap:8px !important}
+      .flow-item{grid-template-columns:34px 1fr !important;padding:10px !important;border-radius:14px !important;background:#fff !important}
+      .flow-item:before{width:28px !important;height:28px !important;border-radius:9px !important;font-size:10pt !important}
+      .flow-item b{font-size:10.5pt !important;margin-bottom:0 !important}
+      .flow-item p{font-size:9.5pt !important;line-height:1.5 !important}
+      .point{padding:11px !important;border-radius:14px !important;background:#fff !important}
+      .point .icon img{height:28px !important}
+      .point h3{font-size:11pt !important;margin-bottom:3px !important}
+      .point p{font-size:9.5pt !important;line-height:1.5 !important}
+      details{border-radius:14px !important;background:#fff !important}
+      summary{padding:10px 12px !important;font-size:10pt !important}
+      summary:after{display:none !important}
+      details:not([open]) .detail-body{display:block !important}
+      .detail-body{padding:0 12px 12px !important;font-size:9.5pt !important}
+      .dialogue{gap:6px !important}
+      .speech{padding:8px 10px !important;border-radius:12px !important}
+      .questions{gap:8px !important}
+      .q-card{padding:12px 12px 12px 52px !important;border-radius:15px !important;background:#fff !important}
+      .q-card:before{left:12px !important;top:13px !important;width:30px !important;height:30px !important;border-radius:10px !important;font-size:9pt !important}
+      .q-card h3{font-size:11pt !important;margin-bottom:4px !important}
+      .q-card p{font-size:9.5pt !important;line-height:1.5 !important}
+      .tip{padding:9px 11px !important;margin-top:8px !important;border-radius:12px !important;font-size:9.5pt !important;background:#fff !important}
+      .prayer{padding:14px !important;border-radius:16px !important;font-size:10.5pt !important;line-height:1.6 !important;background:#fff !important}
+      .emoji-corner{display:none !important}
+      .section-deco{height:28px !important}
+      footer{padding:10px 0 0 !important;font-size:9pt !important;break-inside:avoid}
+      footer img{height:30px !important;margin-top:4px !important}
+      a{text-decoration:none !important;color:inherit !important}
+    }
+
+  </style>
+</head>
+<body>
+  <header class="hero" id="top">
+    <div class="wrap">
+      <div class="topbar">
+        <div class="brand">
+          <img src="https://emojipack.netlify.app/emoji/logo_church_white.png" alt="시대용사 보배마을" onerror="this.style.display='none'">
+        </div>
+        <span class="pill"><img src="https://emojipack.netlify.app/emoji/logo_youth1.png" alt=""></span>
+      </div>
+      <div class="hero-grid">
+        <div>
+          <p class="eyebrow">교사가 먼저 읽는 말씀</p>
+          <h1>누구를 바라보고 있나요?</h1>
+          <div class="identity">
+            <strong>학생들과 말씀을 나누기 전에</strong>, 먼저 교사의 마음이 말씀 앞에 서는 시간입니다.
+          </div>
+        </div>
+        <div class="hero-card">
+          <img src="https://emojipack.netlify.app/emoji/emoji27_welcoming.png" alt="보배마을 용사 이모지" onerror="this.style.display='none'">
+          <p>이번 주 소그룹은<br>정답보다 고백을 기다립니다.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="overview">
+      <div class="section-head"><span class="badge-num">1</span><h2>한눈에 보기</h2></div>
+      <div class="card relative">
+        <div class="scripture-box">
+          <h3>📖 성경본문</h3>
+          <p class="scripture-ref">사도행전 7:54-60 · 개역개정</p>
+          <p class="scripture-text">
+            <span class="verse"><span class="verse-num">54</span>그들이 이 말을 듣고 마음에 찔려 그를 향하여 이를 갈거늘</span>
+            <span class="verse"><span class="verse-num">55</span>스데반이 성령 충만하여 하늘을 우러러 주목하여 하나님의 영광과 및 예수께서 하나님 우편에 서신 것을 보고</span>
+            <span class="verse"><span class="verse-num">56</span>말하되 보라 하늘이 열리고 인자가 하나님 우편에 서신 것을 보노라 한대</span>
+            <span class="verse"><span class="verse-num">57</span>그들이 큰 소리를 지르며 귀를 막고 일제히 그에게 달려들어</span>
+            <span class="verse"><span class="verse-num">58</span>성 밖으로 내치고 돌로 칠새 증인들이 옷을 벗어 사울이라 하는 청년의 발 앞에 두니라</span>
+            <span class="verse"><span class="verse-num">59</span>그들이 돌로 스데반을 치니 스데반이 부르짖어 이르되 주 예수여 내 영혼을 받으시옵소서 하고</span>
+            <span class="verse"><span class="verse-num">60</span>무릎을 꿇고 크게 불러 이르되 주여 이 죄를 그들에게 돌리지 마옵소서 이 말을 하고 자니라</span>
+          </p>
+        </div>
+        <p class="keyline">이번 설교는 <mark>스데반을 닮으라</mark>는 설교가 아니라, <mark>스데반 안에 역사하신 성령님</mark>을 사모하게 하는 설교입니다.</p>
+        <div class="meta">
+          <span class="tag">본문: 사도행전 7:54-60</span>
+          <span class="tag">핵심: 성령 충만</span>
+          <span class="tag">적용: 성령님을 사모함</span>
+        </div>
+        <div class="goal">
+          <b>소그룹 목표</b><br>
+          "나는 스데반처럼 못해요"에서 멈추지 않고, "성령님이 함께하시면 나도 예수님을 더 크게 볼 수 있겠구나"라는 소망을 품도록 돕습니다.
+        </div>
+        <img class="emoji-corner" src="https://emojipack.netlify.app/emoji/emoji34_contemplating.png" alt="" onerror="this.style.display='none'">
+      </div>
+    </section>
+
+    <section id="flow">
+      <div class="section-head"><span class="badge-num">2</span><h2>설교 핵심 흐름</h2></div>
+      <div class="card relative">
+        <div class="flow">
+          <div class="flow-item"><div><b>사람들의 시선</b><p>우리 아이들은 생각보다 사람들의 시선을 많이 의식하며 살아갑니다. 친구들의 말 한마디, 단톡방 분위기, SNS 반응 하나에도 마음이 흔들릴 때가 많습니다. 믿음이 없어서라기보다, 사람들의 시선이 너무 크게 보이면 예수님이 작아질 때가 있는 것 같습니다. 이번 설교는 바로 그 지점에서 시작합니다.</p></div></div>
+          <div class="flow-item"><div><b>스데반의 상황</b><p>스데반도 수많은 시선 앞에 서 있었습니다. 자신을 향해 분노하는 사람들 앞에서 말을 줄일 수도 있었고, 침묵할 수도 있었을 것입니다. 하지만 스데반은 예수님을 부인하는 길을 선택하지 않았습니다. 저는 스데반을 죽음을 선택한 사람이라기보다, 끝까지 예수님을 놓지 않은 사람으로 전하고 싶습니다.</p></div></div>
+          <div class="flow-item"><div><b>오해 바로잡기</b><p>이 본문을 "죽을 각오로 맞서라"는 이야기로 읽지 않으려고 합니다. 예수님도 피할 수 있는 위험은 피하셨고, 바울도 여러 번 박해를 피해 이동했습니다. 중요한 것은 일부러 위험한 자리에 서는 것이 아니라, 사람들의 시선 때문에 예수님을 부인하지 않는 것입니다.</p></div></div>
+          <div class="flow-item"><div><b>성령 충만하여</b><p>누가는 이미 스데반을 성령 충만한 사람으로 소개했습니다. 그런데 결정적인 순간에 다시 "성령 충만하여"라고 말합니다. 저는 이 표현이 참 중요하다고 생각합니다. 누가는 스데반을 영웅으로 세우려는 것이 아니라, 그 순간 스데반을 붙드신 분이 성령님이셨음을 보여 주는 것 같습니다. 결국 스데반의 용기는 성격이 아니라 성령님의 역사였습니다.</p></div></div>
+          <div class="flow-item"><div><b>성령님을 사모하는 삶</b><p>이번 설교의 결단은 "스데반처럼 용감해지겠습니다"가 아닙니다. 오히려 "성령님, 사람보다 예수님을 더 크게 보게 해 주세요"라는 기도에 가깝습니다. 우리 아이들이 성경 인물을 나와 상관없는 특별한 사람으로만 보지 않고, 그들과 함께하셨던 성령님이 오늘 나와도 함께하신다는 소망을 품었으면 좋겠습니다.</p></div></div>
+        </div>
+        <img class="emoji-corner" src="https://emojipack.netlify.app/emoji/emoji28_teaching.png" alt="" onerror="this.style.display='none'">
+      </div>
+    </section>
+
+    <section id="deep">
+      <div class="section-head"><span class="badge-num">3</span><h2>말씀 더 깊이 보기</h2><img class="section-deco" src="https://emojipack.netlify.app/emoji/emoji30_peaceful.png" alt="" onerror="this.style.display='none'"></div>
+      <div class="card relative">
+        <div class="deep-intro">소그룹을 위한 내용은 아니지만, 교사가 먼저 알고 있으면 본문이 더 선명하게 보입니다.</div>
+        <div class="deep-grid">
+          <div class="deep-card">
+            <h3><img src="https://emojipack.netlify.app/emoji/emoji49_defensive.png" alt="" onerror="this.style.display='none'">스데반은 왜 붙잡히게 되었을까요?</h3>
+            <p>스데반은 초대교회에서 세워진 일곱 집사 중 한 사람이었습니다. 그는 구제 사역만 맡은 사람이 아니라, 은혜와 권능이 충만하여 큰 기사와 표적을 행했고 복음을 두고 사람들과 논쟁했습니다.</p>
+            <p>하지만 사람들은 스데반이 지혜와 성령으로 말하는 것을 이길 수 없었습니다. 결국 거짓 증인을 세워 “성전과 율법을 모독했다”고 고발했고, 스데반은 공회 앞에 서게 됩니다.</p>
+            <p>이번 본문은 갑자기 벌어진 사건이 아니라, 복음을 거부하는 사람들의 마음이 점점 드러난 결과입니다.</p>
+          </div>
+          <div class="deep-card">
+            <h3><img src="https://emojipack.netlify.app/emoji/emoji28_teaching.png" alt="" onerror="this.style.display='none'">스데반의 설교는 어떤 구조일까요?</h3>
+            <p>스데반은 자신을 변호하기보다 이스라엘의 역사를 따라가며, 하나님께서 보내신 사람들을 백성들이 반복해서 거절해 왔음을 보여 줍니다.</p>
+            <ul>
+              <li>아브라함을 부르신 하나님</li>
+              <li>요셉을 거절했던 형들</li>
+              <li>모세를 거절했던 이스라엘</li>
+              <li>하나님보다 우상을 선택한 광야 세대</li>
+              <li>그리고 마지막으로 예수님까지 거절한 백성</li>
+            </ul>
+            <p>스데반의 설교는 결국 “조상들이 하나님께서 보내신 사람들을 거절했던 것처럼, 지금 너희도 하나님께서 보내신 예수님을 거절했다”는 흐름으로 이어집니다.</p>
+          </div>
+          <div class="deep-card">
+            <h3><img src="https://emojipack.netlify.app/emoji/emoji24_brave.png" alt="" onerror="this.style.display='none'">스데반의 순교가 가지는 의미</h3>
+            <p>스데반은 성경에 기록된 교회의 첫 순교자로 기억됩니다. 하지만 누가는 스데반의 용기를 강조하기보다, 결정적인 순간에 다시 “성령 충만하여”라고 기록합니다. 스데반을 붙드신 분이 성령님이심을 보여 주기 위해서입니다.</p>
+            <p>또 하나 중요한 점은, 스데반의 순교 이후 교회가 큰 박해를 받으며 흩어졌다는 것입니다. 겉으로 보면 실패처럼 보이지만, 하나님은 그 흩어짐을 통해 복음이 예루살렘을 넘어 유대와 사마리아까지 퍼져 가게 하셨습니다.</p>
+          </div>
+          <div class="deep-card">
+            <h3><img src="https://emojipack.netlify.app/emoji/emoji30_peaceful.png" alt="" onerror="this.style.display='none'">전도사 메모</h3>
+            <p>저는 이번 본문을 준비하면서 스데반보다 누가가 왜 “성령 충만하여”를 다시 기록했을까를 계속 생각하게 되었습니다.</p>
+            <p>이미 6장에서 스데반을 성령 충만한 사람이라고 소개했는데, 결정적인 순간에 다시 이 표현을 반복한 것은 우연이 아니라고 생각합니다.</p>
+            <p>누가는 스데반을 영웅으로 기억하게 하려는 것이 아니라, 스데반을 붙드신 성령님을 보게 하려는 것이었습니다. 그래서 이번 설교도 “스데반처럼 살아야 한다”보다 “성령님을 더욱 사모하는 사람이 되자”는 방향으로 준비했습니다.</p>
+          </div>
+        </div>
+        <img class="emoji-corner" src="https://emojipack.netlify.app/emoji/emoji30_peaceful.png" alt="" onerror="this.style.display='none'">
+      </div>
+    </section>
+
+    <section id="points">
+      <div class="section-head"><span class="badge-num">4</span><h2>교사가 붙잡을 포인트</h2><img class="section-deco" src="https://emojipack.netlify.app/emoji/emoji25_resolute.png" alt="" onerror="this.style.display='none'"></div>
+      <div class="grid two">
+        <div class="point"><span class="icon"><img src="https://emojipack.netlify.app/emoji/emoji47_serious.png" alt="" onerror="this.style.display='none'"></span><div><h3>스데반을 영웅화하지 않기</h3><p>이번 설교가 "스데반처럼 용감해지자"로 끝나면 아이들은 오히려 멀어질 수 있습니다. 스데반을 대단한 사람으로 세우기보다, 스데반을 붙드셨던 성령님을 보게 해 주세요.</p></div></div>
+        <div class="point"><span class="icon"><img src="https://emojipack.netlify.app/emoji/emoji29_worshipful.png" alt="" onerror="this.style.display='none'"></span><div><h3>핵심은 성령 충만</h3><p>스데반이 흔들리지 않았던 이유는 성격이 강해서가 아니라 성령 충만했기 때문입니다. 성령 충만은 나를 강한 사람으로 만드는 것이 아니라, 예수님을 더 크게 보게 하는 은혜입니다.</p></div></div>
+        <div class="point"><span class="icon"><img src="https://emojipack.netlify.app/emoji/emoji21_hopeful.png" alt="" onerror="this.style.display='none'"></span><div><h3>행동보다 사모함</h3><p>이번 주 목표는 아이들이 당장 담대해지는 것이 아닙니다. "성령님, 저도 예수님을 더 크게 보게 해 주세요"라는 작은 기도가 마음에 남는다면 충분합니다. 행동보다 먼저 성령님을 사모하는 마음을 도와주세요.</p></div></div>
+      </div>
+    </section>
+
+    <section id="questions">
+      <div class="section-head"><span class="badge-num">5</span><h2>소그룹 나눔 질문</h2></div>
+      <div class="card relative">
+        <div class="questions">
+          <div class="q-card"><h3>나는 누구의 시선을 가장 의식하나요?</h3><p>친구, 부모님, 선생님, SNS, 성적 등 학생들의 실제 삶에서 이야기하게 해 주세요.</p></div>
+          <div class="q-card"><h3>믿음 때문에 눈치 본 적이 있나요?</h3><p>식사기도, 주일예배, 교회 다닌다는 말, 성경 읽기 등 작은 경험도 괜찮습니다.</p></div>
+          <div class="q-card"><h3>성령님께 어떤 기도를 드리고 싶나요?<br>"성령님, ___________."</h3><p>행동 결단보다 성령님을 사모하는 기도로 마무리합니다.</p></div>
+        </div>
+        <div class="tip">질문을 모두 끝내는 것보다 학생 한 명이 솔직하게 말하도록 기다리는 것이 더 중요합니다.</div>
+        <img class="emoji-corner" src="https://emojipack.netlify.app/emoji/emoji35_thoughtful.png" alt="" onerror="this.style.display='none'">
+      </div>
+    </section>
+
+    <section id="responses">
+      <div class="section-head"><span class="badge-num">6</span><h2>학생들 반응</h2><img class="section-deco" src="https://emojipack.netlify.app/emoji/emoji36_confused.png" alt="" onerror="this.style.display='none'"></div>
+      <div class="card">
+        <details open>
+          <summary>"저는 스데반처럼 못해요."</summary>
+          <div class="detail-body">
+            <div class="dialogue">
+              <div class="speech student"><b>학생</b> 저는 스데반처럼 못할 것 같아요.</div>
+              <div class="speech teacher"><b>교사</b> 맞아. 그래서 오늘 말씀은 스데반처럼 되라는 이야기가 아니야. 스데반을 붙드신 성령님이 우리에게도 필요하다는 이야기야.</div>
+            </div>
+          </div>
+        </details>
+        <details>
+          <summary>"굳이 믿는다고 말해야 해요?"</summary>
+          <div class="detail-body">
+            <div class="dialogue">
+              <div class="speech student"><b>학생</b> 일부러 말하지 않아도 되지 않아요?</div>
+              <div class="speech teacher"><b>교사</b> 맞아. 일부러 위험한 상황에 들어갈 필요는 없어. 다만 눈치 때문에 예수님을 부인하지 않도록 성령님께 도움을 구하는 거야.</div>
+            </div>
+          </div>
+        </details>
+        <details>
+          <summary>"친구들이 이상하게 보면 어떡해요?"</summary>
+          <div class="detail-body">
+            <div class="dialogue">
+              <div class="speech student"><b>학생</b> 친구들이 이상하게 볼까 봐 걱정돼요.</div>
+              <div class="speech teacher"><b>교사</b> 그 마음이 정말 자연스러워. 우리도 사람들의 시선이 크게 보일 때가 있어. 그래서 성령님께 예수님을 더 크게 보게 해 달라고 기도하는 거야.</div>
+            </div>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section id="meditation">
+      <div class="section-head"><span class="badge-num">7</span><h2>교사를 위한 묵상</h2></div>
+      <div class="card relative">
+        <div class="prayer">
+          학생들에게 스데반을 닮으라고 말하기 전에, 교사인 내가 먼저 성령님을 사모하고 있는지 돌아봅니다.<br><br>
+          "성령님, 저도 사람들의 시선을 크게 볼 때가 있습니다. 학생들 앞에 서기 전에, 먼저 제 시선을 예수님께 돌려 주세요. 스데반을 붙드셨던 성령님께서 오늘 저와 우리 반 아이들도 붙들어 주세요."
+        </div>
+        <img class="emoji-corner" src="https://emojipack.netlify.app/emoji/emoji32_prayerful.png" alt="" onerror="this.style.display='none'">
+      </div>
+    </section>    
+
+  </main>
+
+  <nav class="bottom-nav" aria-label="빠른 이동">
+    <a href="#overview"><img src="https://emojipack.netlify.app/emoji/emoji26_focused.png" alt="">한눈에</a>
+    <a href="#flow"><img src="https://emojipack.netlify.app/emoji/emoji28_teaching.png" alt="">흐름</a>
+    <a href="#deep"><img src="https://emojipack.netlify.app/emoji/emoji30_peaceful.png" alt="">말씀</a>
+    <a href="#questions"><img src="https://emojipack.netlify.app/emoji/emoji35_thoughtful.png" alt="">질문</a>
+    <a href="#meditation"><img src="https://emojipack.netlify.app/emoji/emoji32_prayerful.png" alt="">묵상</a>
+  </nav>
+
+  <footer>
+    <div class="wrap">
+      보배마을 중등부<br>
+      <img src="https://emojipack.netlify.app/emoji/logo_church_blue.png" alt="안락교회" onerror="this.style.display='none'">
+    </div>
+  </footer>
+</body>
+</html>

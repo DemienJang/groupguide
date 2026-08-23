@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>교사자료 | 진로와 소명 설교 소그룹 가이드</title>
+  <style>
+    :root {
+      --bg: #f7f3ec;
+      --paper: #fffdf8;
+      --ink: #25211b;
+      --muted: #6f675c;
+      --line: #e7dccb;
+      --primary: #7a4f2a;
+      --primary-dark: #513318;
+      --accent: #d89b5c;
+      --accent-soft: #fff1dc;
+      --green: #6b7f53;
+      --blue: #5d718c;
+      --rose: #b66b63;
+      --shadow: 0 18px 45px rgba(81, 51, 24, 0.12);
+      --radius-lg: 28px;
+      --radius-md: 18px;
+      --radius-sm: 12px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(216, 155, 92, 0.22), transparent 34rem),
+        radial-gradient(circle at bottom right, rgba(107, 127, 83, 0.14), transparent 30rem),
+        var(--bg);
+      line-height: 1.72;
+      word-break: keep-all;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 28px 22px 72px;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, #fffaf0 0%, #fffdf8 52%, #f3e2ca 100%);
+      border: 1px solid rgba(122, 79, 42, 0.14);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      padding: 54px 52px;
+      margin-bottom: 26px;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 360px;
+      height: 360px;
+      border-radius: 50%;
+      right: -120px;
+      top: -120px;
+      background: rgba(216, 155, 92, 0.18);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--primary-dark);
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      position: relative;
+      z-index: 1;
+      margin: 0 0 18px;
+      font-size: clamp(34px, 6vw, 58px);
+      line-height: 1.08;
+      letter-spacing: -0.055em;
+      color: var(--primary-dark);
+    }
+
+    .hero p {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+      margin: 0;
+      color: var(--muted);
+      font-size: clamp(17px, 2vw, 20px);
+      letter-spacing: -0.02em;
+    }
+
+    .hero-actions {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .button {
+      border: 0;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 18px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button.primary {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 10px 24px rgba(122, 79, 42, 0.24);
+    }
+
+    .button.secondary {
+      background: #fff;
+      color: var(--primary-dark);
+      border: 1px solid var(--line);
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 260px minmax(0, 1fr);
+      gap: 24px;
+      align-items: start;
+    }
+
+    .toc {
+      position: sticky;
+      top: 22px;
+      background: rgba(255, 253, 248, 0.86);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(122, 79, 42, 0.12);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      box-shadow: 0 12px 32px rgba(81, 51, 24, 0.08);
+    }
+
+    .toc strong {
+      display: block;
+      margin-bottom: 12px;
+      color: var(--primary-dark);
+      font-size: 15px;
+    }
+
+    .toc a {
+      display: block;
+      padding: 10px 12px;
+      border-radius: 12px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .toc a:hover {
+      background: var(--accent-soft);
+      color: var(--primary-dark);
+    }
+
+    main {
+      display: grid;
+      gap: 24px;
+    }
+
+    section {
+      background: rgba(255, 253, 248, 0.94);
+      border: 1px solid rgba(122, 79, 42, 0.12);
+      border-radius: var(--radius-lg);
+      padding: 34px;
+      box-shadow: 0 14px 34px rgba(81, 51, 24, 0.08);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 24px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 18px;
+    }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 12px;
+      background: var(--primary);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+
+    .section-title-wrap {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(25px, 3vw, 34px);
+      line-height: 1.22;
+      letter-spacing: -0.045em;
+      color: var(--primary-dark);
+    }
+
+    .section-desc {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .big-message {
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+      color: #fff;
+      border-radius: var(--radius-lg);
+      padding: 30px;
+      margin: 20px 0 28px;
+      box-shadow: 0 18px 35px rgba(81, 51, 24, 0.18);
+    }
+
+    .big-message span {
+      display: block;
+      color: rgba(255,255,255,0.72);
+      font-size: 14px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      letter-spacing: 0.04em;
+    }
+
+    .big-message h3 {
+      margin: 0;
+      font-size: clamp(25px, 4vw, 40px);
+      letter-spacing: -0.05em;
+      line-height: 1.2;
+    }
+
+    .grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .grid.two {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid.three {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .card {
+      background: #fffaf2;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      padding: 22px;
+    }
+
+    .card.white {
+      background: #fff;
+    }
+
+    .card h3 {
+      margin: 0 0 12px;
+      color: var(--primary-dark);
+      font-size: 20px;
+      line-height: 1.36;
+      letter-spacing: -0.035em;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15.5px;
+    }
+
+    .card ul {
+      margin: 12px 0 0;
+      padding-left: 20px;
+      color: var(--muted);
+    }
+
+    .card li + li {
+      margin-top: 6px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 5px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 900;
+      margin-bottom: 10px;
+      color: var(--primary-dark);
+      background: var(--accent-soft);
+    }
+
+    .flow {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .flow span {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 13px;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid var(--line);
+      color: var(--primary-dark);
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    .quote-box {
+      border-left: 5px solid var(--accent);
+      background: #fff7ea;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 20px 22px;
+      margin: 18px 0;
+    }
+
+    .quote-box p {
+      margin: 0;
+      color: var(--primary-dark);
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .mini-title {
+      margin: 28px 0 14px;
+      font-size: 22px;
+      line-height: 1.34;
+      letter-spacing: -0.04em;
+      color: var(--primary-dark);
+    }
+
+    .theology-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 230px;
+      background: #fff;
+    }
+
+    .theology-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 7px;
+      background: var(--accent);
+    }
+
+    .theology-card:nth-child(2)::before { background: var(--green); }
+    .theology-card:nth-child(3)::before { background: var(--blue); }
+    .theology-card:nth-child(4)::before { background: var(--rose); }
+    .theology-card:nth-child(5)::before { background: var(--primary); }
+
+    .guide-card {
+      display: grid;
+      grid-template-columns: 130px minmax(0, 1fr);
+      gap: 18px;
+      align-items: start;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+    }
+
+    .question-mark {
+      background: var(--accent-soft);
+      color: var(--primary-dark);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      text-align: center;
+      font-weight: 900;
+    }
+
+    .question-mark small {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      margin-bottom: 4px;
+    }
+
+    .question-mark strong {
+      display: block;
+      font-size: 34px;
+      line-height: 1;
+    }
+
+    .guide-card blockquote {
+      margin: 0 0 14px;
+      padding: 0;
+      color: var(--primary-dark);
+      font-size: 19px;
+      line-height: 1.55;
+      font-weight: 850;
+      letter-spacing: -0.035em;
+    }
+
+    .guide-card .purpose {
+      display: inline-flex;
+      margin-bottom: 10px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #f3eadb;
+      color: var(--primary-dark);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .guide-card ul {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--muted);
+    }
+
+    .guide-card li + li {
+      margin-top: 7px;
+    }
+
+    .closing-prayer {
+      background: linear-gradient(135deg, #fff7ea, #ffffff);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      margin-top: 20px;
+    }
+
+    .closing-prayer h3 {
+      margin: 0 0 10px;
+      color: var(--primary-dark);
+      font-size: 23px;
+      letter-spacing: -0.04em;
+    }
+
+    .closing-prayer p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .teacher-note {
+      display: grid;
+      grid-template-columns: 70px minmax(0, 1fr);
+      gap: 16px;
+      align-items: center;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      padding: 22px;
+      margin-top: 24px;
+    }
+
+    .teacher-note .icon {
+      width: 70px;
+      height: 70px;
+      border-radius: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      background: var(--accent-soft);
+    }
+
+    .teacher-note strong {
+      color: var(--primary-dark);
+      font-size: 19px;
+      letter-spacing: -0.03em;
+    }
+
+    .teacher-note p {
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: 15.5px;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      padding: 36px 0 0;
+    }
+
+    @media (max-width: 920px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      .toc {
+        position: relative;
+        top: auto;
+      }
+
+      .toc nav {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 6px;
+      }
+
+      .grid.two,
+      .grid.three {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .page {
+        padding: 16px 14px 52px;
+      }
+
+      .hero,
+      section {
+        padding: 28px 22px;
+        border-radius: 22px;
+      }
+
+      .section-header,
+      .section-title-wrap,
+      .teacher-note {
+        display: block;
+      }
+
+      .section-label {
+        margin-bottom: 12px;
+      }
+
+      .teacher-note .icon {
+        margin-bottom: 12px;
+      }
+
+      .toc nav {
+        grid-template-columns: 1fr;
+      }
+
+      .guide-card {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .page {
+        max-width: none;
+        padding: 0;
+      }
+
+      .hero,
+      section,
+      .toc,
+      .card,
+      .guide-card,
+      .teacher-note,
+      .closing-prayer {
+        box-shadow: none !important;
+        break-inside: avoid;
+      }
+
+      .toc,
+      .hero-actions {
+        display: none;
+      }
+
+      .layout {
+        display: block;
+      }
+
+      section {
+        margin: 0 0 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="hero" id="top">
+      <div class="eyebrow">교사자료 · 진로와 소명 설교 소그룹 가이드</div>
+      <h1>나는 하나님의 소원을 품은 자녀입니다</h1>
+      <p>
+        학생들의 진로 고민을 현실적으로 공감하되, 그 고민이 하나님 앞에서 살아가는 신앙의 여정으로 연결되도록 돕기 위한 교사용 안내 자료입니다.
+      </p>
+      <div class="hero-actions">
+        <a class="button primary" href="#smallgroup">소그룹 인도 가이드 보기</a>
+        <button class="button secondary" type="button" onclick="window.print()">인쇄하기</button>
+      </div>
+    </header>
+
+    <div class="layout">
+      <aside class="toc" aria-label="목차">
+        <strong>목차</strong>
+        <nav>
+          <a href="#overview">1. 설교 핵심 정리</a>
+          <a href="#message">2. 핵심 메시지</a>
+          <a href="#theology">3. 신학적 배경</a>
+          <a href="#smallgroup">4. 소그룹 나눔</a>
+          <a href="#questions">5. 질문별 가이드</a>
+          <a href="#closing">6. 나눔 마무리</a>
+        </nav>
+      </aside>
+
+      <main>
+        <section id="overview">
+          <div class="section-header">
+            <div class="section-title-wrap">
+              <span class="section-label">1</span>
+              <div>
+                <h2>설교 핵심 정리</h2>
+                <p class="section-desc">이번 설교의 구조와 교사가 붙들어야 할 큰 흐름입니다.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card white">
+            <span class="tag">설교의 큰 그림</span>
+            <h3>진로특강에서 말씀 본론으로 이어지는 구조</h3>
+            <p>
+              이번 설교는 <strong>진로특강 형태의 서론</strong>과 <strong>말씀 중심의 본론</strong>이 결합된 흐름입니다. 서론에서는 학생들이 실제로 느끼는 진로 고민을 충분히 다루고, 본론에서는 그 고민에 대한 신앙적 응답을 제시합니다. 교사는 이 연결 지점을 이해하고 있어야 소그룹 나눔을 자연스럽게 인도할 수 있습니다.
+            </p>
+          </div>
+
+          <div class="big-message">
+            <span>오늘 학생들이 마음에 품고 돌아가야 할 한 문장</span>
+            <h3>“나는 하나님의 소원을 품은 자녀다.”</h3>
+          </div>
+
+          <div class="teacher-note">
+            <div class="icon">🌱</div>
+            <div>
+              <strong>교사의 핵심 역할</strong>
+              <p>학생의 진로 고민을 단순한 성적·직업 문제가 아니라 하나님 앞에서 자신을 알아가고 살아내는 신앙의 자리로 해석해 주는 것입니다.</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="message">
+          <div class="section-header">
+            <div class="section-title-wrap">
+              <span class="section-label">2</span>
+              <div>
+                <h2>핵심 메시지 5가지</h2>
+                <p class="section-desc">소그룹 전 교사가 먼저 붙들어야 할 설교의 중심 내용입니다.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid two">
+            <article class="card">
+              <span class="tag">① 경험</span>
+              <h3>흥미와 재미는 경험에서 출발한다</h3>
+              <p>진로를 모르는 것은 학생의 잘못이 아닙니다. 흥미는 저절로 생기는 것이 아니라 경험 속에서 발견됩니다.</p>
+              <div class="flow" aria-label="흥미 형성 흐름">
+                <span>경험</span>
+                <span>흥미</span>
+                <span>재미</span>
+                <span>의미</span>
+              </div>
+              <ul>
+                <li>스마트폰의 도파민 자극과 진짜 즐거움을 구분하도록 돕습니다.</li>
+                <li>작은 경험을 통해 자신을 알아가도록 격려합니다.</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <span class="tag">② 단서</span>
+              <h3>흥미·적성·가치는 하나님이 심어두신 단서다</h3>
+              <p>학생의 관심사와 재능을 가볍게 여기지 마세요. 창조주께서 새겨두신 흔적으로 볼 수 있습니다.</p>
+              <ul>
+                <li><strong>흥미:</strong> 마음이 끌리는 것</li>
+                <li><strong>적성:</strong> 비교적 잘하는 것</li>
+                <li><strong>가치:</strong> 중요하게 여기는 것</li>
+                <li>세 요소가 겹치는 지점은 진로 탐색의 중요한 단서가 됩니다.</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <span class="tag">③ 여정</span>
+              <h3>진로 탐색은 하나님 앞에서 살아내는 신앙의 여정이다</h3>
+              <p>직업과 소명을 구분하는 것이 중요합니다. 직업은 바뀔 수 있지만, 소명은 하나님의 자녀로 살아가는 정체성입니다.</p>
+              <ul>
+                <li><strong>직업:</strong> 바뀔 수 있는 구체적 형태</li>
+                <li><strong>소명:</strong> 하나님의 자녀로 살아가는 평생의 정체성</li>
+                <li>학생에게 먼저 던질 질문은 “무슨 직업?”보다 “어떤 사람?”입니다.</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <span class="tag">④ 질문 전환</span>
+              <h3>“어느 학교?”에서 “어떻게 하나님을 기쁘시게?”로</h3>
+              <p>성적과 학교 이름이 정체성이 되는 세상의 논리에 맞서, 하나님 앞에서 살아가는 코람 데오의 삶을 가르칩니다.</p>
+              <ul>
+                <li>두렵고 떨림은 실패에 대한 불안이 아니라 하나님 앞에서의 경외심입니다.</li>
+                <li>진로를 고민하는 모든 순간이 하나님께 드리는 신앙의 행위가 될 수 있습니다.</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="card white" style="margin-top:16px;">
+            <span class="tag">⑤ 정체성 선언</span>
+            <h3>나는 하나님의 소원을 품은 자녀다</h3>
+            <p>
+              시험 점수, 진학 결과, 대학 이름은 학생의 가치를 결정하지 못합니다. 구부러진 세대 한가운데서 빛으로 살아내는 것 자체가 이 시대 중학생 그리스도인의 소명입니다.
+            </p>
+          </div>
+        </section>
+
+        <section id="theology">
+          <div class="section-header">
+            <div class="section-title-wrap">
+              <span class="section-label">3</span>
+              <div>
+                <h2>교사를 위한 신학적·신앙적 배경</h2>
+                <p class="section-desc">학생들의 대답을 신앙적으로 해석하고 붙들어 주기 위한 배경 지식입니다.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid two">
+            <article class="card theology-card">
+              <h3>코람 데오 · Coram Deo</h3>
+              <p><strong>뜻:</strong> 라틴어로 “하나님 앞에서”라는 의미입니다.</p>
+              <ul>
+                <li>삶의 모든 영역이 하나님 앞에서 이루어진다는 인식입니다.</li>
+                <li>진로, 공부, 친구 관계도 신앙의 자리입니다.</li>
+                <li><strong>교사 포인트:</strong> “신앙생활은 교회 안에서만”이라는 이분법을 깨뜨리는 핵심 개념입니다.</li>
+              </ul>
+            </article>
+
+            <article class="card theology-card">
+              <h3>소명론 · Calling</h3>
+              <p>소명은 특정 종교 직분에만 제한되지 않습니다. 모든 그리스도인의 일상 자체가 하나님 앞에 드려질 수 있습니다.</p>
+              <ul>
+                <li>학생의 공부도 하나님 앞에 드리는 삶이 될 수 있습니다.</li>
+                <li>청소부, 농부, 직장인, 학생의 일상 모두 소명의 자리가 될 수 있습니다.</li>
+                <li><strong>교사 포인트:</strong> “목사나 선교사가 되어야만 소명이 있다”는 오해를 풀어주세요.</li>
+              </ul>
+            </article>
+
+            <article class="card theology-card">
+              <h3>칼뱅의 이중 지식론</h3>
+              <p>하나님을 아는 지식과 나를 아는 지식은 분리될 수 없다는 관점입니다.</p>
+              <ul>
+                <li>자기 탐색은 단순한 진로 검사가 아니라 하나님을 알아가는 과정과 연결됩니다.</li>
+                <li><strong>교사 포인트:</strong> 학생이 자신을 알아가는 과정을 신앙적으로 격려해 주세요.</li>
+              </ul>
+            </article>
+
+            <article class="card theology-card">
+              <h3>성화 · Sanctification</h3>
+              <p>구원받은 이후 하나님의 형상을 닮아가는 과정입니다.</p>
+              <ul>
+                <li>진로 탐색과 방황의 시간도 성화의 과정 안에 있습니다.</li>
+                <li>원하는 학교에 가지 못하는 경험도 하나님 안에서 빚어지는 시간이 될 수 있습니다.</li>
+                <li><strong>교사 포인트:</strong> 결과보다 하나님이 빚어가시는 과정을 보게 해 주세요.</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="quote-box">
+            <p>“두렵고 떨림”은 실패에 대한 공포가 아니라, 하나님의 임재 앞에서 갖는 경외심과 진지함입니다.</p>
+          </div>
+
+          <div class="card white">
+            <h3>헬라어 표현</h3>
+            <p><strong>μετὰ φόβου καὶ τρόμου</strong> · 메타 포부 카이 트로무</p>
+            <ul>
+              <li>실패에 대한 불안이 아닙니다.</li>
+              <li>하나님 앞에서 삶을 진지하게 살아내는 경외심입니다.</li>
+              <li>학생이 느끼는 진로 불안과 성경이 말하는 경외심을 구분해 주세요.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section id="smallgroup">
+          <div class="section-header">
+            <div class="section-title-wrap">
+              <span class="section-label">4</span>
+              <div>
+                <h2>소그룹 나눔 인도 가이드</h2>
+                <p class="section-desc">이번 나눔의 목표는 설교 내용 확인이 아니라 정체성의 고백입니다.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card white">
+            <span class="tag">나눔의 중심</span>
+            <h3>진로 이야기로 문을 열고, 신앙적 질문으로 깊어지고, 삶의 실천으로 마무리합니다.</h3>
+            <p>
+              학생이 오늘 예배를 마치고 돌아갈 때 <strong>“나는 하나님의 소원을 품은 자녀다”</strong>라는 한 문장을 마음에 품고 가도록 돕는 것이 이번 소그룹의 목표입니다.
+            </p>
+          </div>
+
+          <h3 class="mini-title">소그룹 흐름</h3>
+          <div class="grid three">
+            <div class="card">
+              <span class="tag">STEP 1</span>
+              <h3>현실 공감</h3>
+              <p>진로를 찾을 때 빠지기 쉬운 함정을 나누며 학생의 실제 고민을 열어줍니다.</p>
+            </div>
+            <div class="card">
+              <span class="tag">STEP 2</span>
+              <h3>정체성 고백</h3>
+              <p>“하나님의 소원을 품은 자녀”라는 선언이 학생의 마음에 어떻게 들리는지 묻습니다.</p>
+            </div>
+            <div class="card">
+              <span class="tag">STEP 3</span>
+              <h3>한 주 실천</h3>
+              <p>스마트폰 대신 시도해 볼 작은 경험 하나를 구체적으로 정합니다.</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="questions">
+          <div class="section-header">
+            <div class="section-title-wrap">
+              <span class="section-label">5</span>
+              <div>
+                <h2>질문별 인도 가이드</h2>
+                <p class="section-desc">질문마다 목적과 후속 질문의 방향을 기억해 주세요.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid">
+            <article class="guide-card">
+              <div class="question-mark">
+                <small>첫 번째 질문</small>
+                <strong>Q1</strong>
+              </div>
+              <div>
+                <blockquote>
+                  진로를 찾을 때 피해야 할 세 가지, 직업·인정욕구·트렌드 중에서 내가 가장 많이 빠지기 쉬운 함정은 어떤 것 같아요? 그 이유는 뭔가요?
+                </blockquote>
+                <span class="purpose">목적 · 설교 내용을 자기 삶에 연결하는 첫 관문</span>
+                <ul>
+                  <li>지식 확인이 아니라 자기 인식의 시작으로 다룹니다.</li>
+                  <li>세 가지 함정을 간단히 상기시킨 뒤 시작하세요.</li>
+                  <li>“다 해당돼요”라고 하면 “그중 하나만 고른다면?”으로 좁혀주세요.</li>
+                  <li>교사 자신의 짧은 경험을 먼저 나누면 학생들이 더 편하게 말할 수 있습니다.</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="guide-card">
+              <div class="question-mark">
+                <small>두 번째 질문</small>
+                <strong>Q2</strong>
+              </div>
+              <div>
+                <blockquote>
+                  “나는 하나님의 소원을 품은 자녀다”라는 말을 들었을 때 솔직히 어떤 마음이 들었나요? 믿어졌나요, 아직 어색한가요?
+                </blockquote>
+                <span class="purpose">목적 · 정체성 선언이 마음의 고백이 되도록 돕기</span>
+                <ul>
+                  <li>“믿어졌어요”와 “아직 어색해요” 모두 정직한 대답임을 먼저 말해주세요.</li>
+                  <li>어색하다고 답한 학생에게는 “어떤 부분이 어색했어요?”라고 한 걸음 더 들어가 보세요.</li>
+                  <li>억지로 고백을 끌어내기보다 솔직함 자체를 격려해 주세요.</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="guide-card">
+              <div class="question-mark">
+                <small>세 번째 질문</small>
+                <strong>Q3</strong>
+              </div>
+              <div>
+                <blockquote>
+                  이번 한 주, 스마트폰 대신 새롭게 경험해보고 싶은 것이 한 가지 있다면 무엇인가요? 구체적으로 말해봐요.
+                </blockquote>
+                <span class="purpose">목적 · 설교가 한 주의 삶으로 이어지도록 돕기</span>
+                <ul>
+                  <li>거창한 결단보다 작고 구체적인 실천 하나를 찾는 것이 목표입니다.</li>
+                  <li>그림, 운동, 악기, 봉사, 요리 등 사소한 것도 충분하다고 말해주세요.</li>
+                  <li>대답이 나오면 “이번 주에 해보고 다음 주에 얘기해줘요”라고 구체적으로 응원해 주세요.</li>
+                  <li>가능하다면 다음 주 소그룹 시작 때 후속 질문으로 이어가 주세요.</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="closing">
+          <div class="section-header">
+            <div class="section-title-wrap">
+              <span class="section-label">6</span>
+              <div>
+                <h2>나눔 마무리</h2>
+                <p class="section-desc">학생의 이야기를 기도 안에 담아주는 것이 설교의 메시지를 몸으로 전달하는 방법입니다.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="closing-prayer">
+            <h3>이름을 불러 기도해 주세요</h3>
+            <p>
+              소그룹을 마칠 때 학생 한 명 한 명의 이름을 불러가며 짧게 기도해 주세요. 나눔에서 나온 학생의 이야기를 기도 안에 담아주면, 학생은 “내 이야기를 들어줬다”는 것을 느낍니다. 그것 자체가 오늘 설교의 메시지를 몸으로 전달하는 일이 됩니다.
+            </p>
+          </div>
+
+          <div class="teacher-note">
+            <div class="icon">🙏</div>
+            <div>
+              <strong>마지막으로 붙들 문장</strong>
+              <p>학생을 문제 해결의 대상으로 보기보다, 하나님께서 이미 소원을 품고 부르신 자녀로 바라봐 주세요.</p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <footer>
+      중등부 교사자료 · 진로와 소명 설교 소그룹 안내 웹페이지
+    </footer>
+  </div>
+</body>
+</html>
